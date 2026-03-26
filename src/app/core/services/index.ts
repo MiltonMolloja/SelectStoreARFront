@@ -5,3 +5,4 @@ export { AnalyticsService } from './analytics.service';
 export { SeoService } from './seo.service';
 export { ApiService } from './api.service';
 export { ToastService } from './toast.service';
+export { OrderService } from './order.service';

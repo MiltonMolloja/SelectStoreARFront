@@ -74,8 +74,9 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
     </section>
 
     <!-- Categorías -->
-    @if (data()?.categories?.length) {
-      <section class="py-16 bg-[var(--color-surface)]">
+    @defer (on viewport) {
+      @if (data()?.categories?.length) {
+        <section class="py-16 bg-[var(--color-surface)]">
         <div class="container mx-auto px-4">
           <h2 class="text-3xl font-bold mb-4" style="font-family: 'Cormorant Garamond', serif">
             Categorías
@@ -100,7 +101,10 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
             }
           </div>
         </div>
-      </section>
+        </section>
+      }
+    } @placeholder {
+      <div class="py-16"></div>
     }
 
     <!-- Productos Destacados -->
@@ -133,7 +137,8 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
     </section>
 
     <!-- Por qué elegirnos -->
-    <section class="py-16 bg-[var(--color-surface)]">
+    @defer (on viewport) {
+      <section class="py-16 bg-[var(--color-surface)]">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12" style="font-family: 'Cormorant Garamond', serif">
           Por qué elegirnos
@@ -151,7 +156,10 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
           }
         </div>
       </div>
-    </section>
+      </section>
+    } @placeholder {
+      <div class="py-16"></div>
+    }
   `,
 })
 export class LandingComponent implements OnInit {

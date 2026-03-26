@@ -5,6 +5,7 @@ import { CartService } from '../../core/services/cart.service';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { AnalyticsService } from '../../core/services/analytics.service';
 import { ToastService } from '../../core/services/toast.service';
+import { OrderService } from '../../core/services/order.service';
 
 @Component({
   selector: 'app-cart',
@@ -166,6 +167,7 @@ export class CartComponent {
   private readonly fb = inject(FormBuilder);
   private readonly analytics = inject(AnalyticsService);
   private readonly toast = inject(ToastService);
+  private readonly orderService = inject(OrderService);
   protected readonly cart = inject(CartService);
   protected readonly prefs = inject(PreferencesService);
   protected readonly submitting = signal(false);
@@ -197,41 +199,22 @@ export class CartComponent {
     this.submitting.set(true);
 
     const { customerName, customerPhone } = this.checkoutForm.value;
-    const items = this.cart.items();
-    const totalUsd = this.cart.totalUsd();
 
-    // Build WhatsApp message
-    const lines: string[] = [
-      `Hola! Soy ${customerName} 👋`,
-      'Te paso mi pedido de SelectStoreAR:',
-      '',
-    ];
-
-    items.forEach((item, i) => {
-      lines.push(`${i + 1}. ${item.name} x${item.quantity}`);
-      lines.push(`   US$ ${(item.priceUsd * item.quantity).toFixed(2)}`);
-      lines.push('');
+    this.orderService.placeOrder(customerName!, customerPhone!).subscribe({
+      next: () => {
+        this.checkoutForm.reset();
+        this.submitting.set(false);
+      },
+      error: () => {
+        // Fallback: open WhatsApp manually if API fails
+        const items = this.cart.items();
+        const link = this.orderService.buildWhatsAppLink(customerName!, customerPhone!, items);
+        window.open(link, '_blank');
+        this.cart.clear();
+        this.checkoutForm.reset();
+        this.submitting.set(false);
+        this.toast.info('Se abrió WhatsApp directamente (el servidor no respondió).');
+      },
     });
-
-    lines.push(`💰 Total: US$ ${totalUsd.toFixed(2)}`);
-    lines.push(`📱 Mi teléfono: ${customerPhone}`);
-    lines.push('');
-    lines.push('Quedo a la espera para coordinar. Gracias!');
-
-    const message = encodeURIComponent(lines.join('\n'));
-    const whatsappUrl = `https://wa.me/5493881234567?text=${message}`;
-
-    // Track
-    this.analytics.trackCheckout(totalUsd, items.length);
-
-    // Open WhatsApp
-    window.open(whatsappUrl, '_blank');
-
-    // Clear cart
-    this.cart.clear();
-    this.checkoutForm.reset();
-    this.submitting.set(false);
-
-    this.toast.success('¡Pedido enviado! Se abrió WhatsApp con tu pedido.');
   }
 }

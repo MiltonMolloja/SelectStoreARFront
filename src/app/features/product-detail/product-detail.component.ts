@@ -145,17 +145,21 @@ import { ProductCardComponent } from '../../shared/components/product-card/produ
         }
 
         <!-- Related Products -->
-        @if (product()!.relatedProducts.length) {
-          <section class="mb-10">
-            <h2 class="text-xl font-bold mb-6" style="font-family: 'Cormorant Garamond', serif">
-              Productos Relacionados
-            </h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-              @for (related of product()!.relatedProducts; track related.id) {
-                <app-product-card [product]="related" />
-              }
-            </div>
-          </section>
+        @defer (on viewport) {
+          @if (product()!.relatedProducts.length) {
+            <section class="mb-10">
+              <h2 class="text-xl font-bold mb-6" style="font-family: 'Cormorant Garamond', serif">
+                Productos Relacionados
+              </h2>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                @for (related of product()!.relatedProducts; track related.id) {
+                  <app-product-card [product]="related" />
+                }
+              </div>
+            </section>
+          }
+        } @placeholder {
+          <div class="mb-10"></div>
         }
       </div>
     } @else {
