@@ -43,6 +43,12 @@ export const ADMIN_ROUTES: Routes = [
         title: 'Pedidos | Admin | SelectStoreAR',
       },
       {
+        path: 'pedidos/:id',
+        loadComponent: () =>
+          import('./orders/order-detail.component').then(m => m.OrderDetailComponent),
+        title: 'Detalle Pedido | Admin | SelectStoreAR',
+      },
+      {
         path: 'configuracion',
         loadComponent: () =>
           import('./config/admin-config.component').then(m => m.AdminConfigComponent),

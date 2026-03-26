@@ -12,6 +12,31 @@ import { AdminDashboardData } from '../models/admin.models';
     <div class="p-8">
       <h1 class="text-3xl font-bold mb-8">Dashboard</h1>
 
+      <!-- Alerts -->
+      @if (data()?.products?.draft && data()!.products.draft > 0) {
+        <a routerLink="/admin/productos" [queryParams]="{ status: 'draft' }"
+           class="flex items-center gap-3 p-4 mb-6 rounded-xl border border-yellow-300 bg-yellow-50 text-yellow-800
+                  hover:bg-yellow-100 transition-colors">
+          <span class="text-xl">📝</span>
+          <div>
+            <p class="font-semibold text-sm">{{ data()!.products.draft }} borradores pendientes</p>
+            <p class="text-xs opacity-80">Productos importados desde Telegram esperando revisión</p>
+          </div>
+        </a>
+      }
+
+      @if (data()?.orders?.delayed && data()!.orders.delayed > 0) {
+        <a routerLink="/admin/pedidos"
+           class="flex items-center gap-3 p-4 mb-6 rounded-xl border border-red-300 bg-red-50 text-red-800
+                  hover:bg-red-100 transition-colors">
+          <span class="text-xl">⚠️</span>
+          <div>
+            <p class="font-semibold text-sm">{{ data()!.orders.delayed }} pedidos demorados</p>
+            <p class="text-xs opacity-80">Pedidos sin cambio de estado por más de 7 días</p>
+          </div>
+        </a>
+      }
+
       <!-- Metric Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div class="bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)] p-6 text-center">
