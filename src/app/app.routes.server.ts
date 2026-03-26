@@ -1,7 +1,7 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
 export const serverRoutes: ServerRoute[] = [
-  // Público — SSR landing (Prerender cuando haya API disponible)
+  // Público — SSR landing
   { path: '', renderMode: RenderMode.Client },
 
   // Público — SSR para SEO
@@ -10,9 +10,13 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'producto/:slug', renderMode: RenderMode.Server },
   { path: 'buscar', renderMode: RenderMode.Server },
 
-  // Público — CSR (no necesita SEO)
+  // Público — CSR
   { path: 'carrito', renderMode: RenderMode.Client },
   { path: 'login', renderMode: RenderMode.Client },
+  { path: 'auth/**', renderMode: RenderMode.Client },
+  { path: 'perfil', renderMode: RenderMode.Client },
+  { path: 'mis-pedidos', renderMode: RenderMode.Client },
+  { path: 'mis-pedidos/:id', renderMode: RenderMode.Client },
 
   // Admin — CSR
   { path: 'admin/**', renderMode: RenderMode.Client },

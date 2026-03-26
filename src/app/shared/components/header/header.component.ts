@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
 import { CurrencyToggleComponent } from '../currency-toggle/currency-toggle.component';
 import { CartBadgeComponent } from '../cart-badge/cart-badge.component';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -42,6 +43,23 @@ import { CartBadgeComponent } from '../cart-badge/cart-badge.component';
           <app-currency-toggle />
           <app-cart-badge />
 
+          <!-- Auth -->
+          @if (auth.isAuthenticated()) {
+            <a routerLink="/perfil"
+               class="hidden md:flex items-center gap-2 px-2 py-1 rounded-lg hover:bg-[var(--color-surface-hover)] transition-colors"
+               title="Mi perfil">
+              <div class="w-7 h-7 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center text-xs font-bold">
+                {{ auth.userInitial() }}
+              </div>
+            </a>
+          } @else {
+            <a routerLink="/login"
+               class="hidden md:inline-flex px-3 py-1.5 text-sm font-medium text-[var(--color-accent)]
+                      border border-[var(--color-accent)] rounded-lg hover:bg-[var(--color-accent-light)] transition-colors">
+              Ingresar
+            </a>
+          }
+
           <!-- Mobile menu button -->
           <button
             class="md:hidden p-2 rounded-lg hover:bg-[var(--color-surface-hover)] transition-colors"
@@ -74,6 +92,25 @@ import { CartBadgeComponent } from '../cart-badge/cart-badge.component';
              class="block py-2 text-sm hover:text-[var(--color-accent)] transition-colors">
             Carrito
           </a>
+          @if (auth.isAuthenticated()) {
+            <a routerLink="/perfil" (click)="menuOpen.set(false)"
+               class="block py-2 text-sm hover:text-[var(--color-accent)] transition-colors">
+              Mi Perfil
+            </a>
+            <a routerLink="/mis-pedidos" (click)="menuOpen.set(false)"
+               class="block py-2 text-sm hover:text-[var(--color-accent)] transition-colors">
+              Mis Pedidos
+            </a>
+            <button (click)="auth.logout(); menuOpen.set(false)"
+                    class="block w-full text-left py-2 text-sm text-[var(--color-error)] hover:opacity-80">
+              Cerrar sesión
+            </button>
+          } @else {
+            <a routerLink="/login" (click)="menuOpen.set(false)"
+               class="block py-2 text-sm text-[var(--color-accent)] font-medium">
+              Iniciar sesión
+            </a>
+          }
         </div>
       }
     </header>
@@ -81,6 +118,7 @@ import { CartBadgeComponent } from '../cart-badge/cart-badge.component';
 })
 export class HeaderComponent {
   private readonly router = inject(Router);
+  protected readonly auth = inject(AuthService);
   protected readonly menuOpen = signal(false);
   protected readonly searchQuery = signal('');
 
