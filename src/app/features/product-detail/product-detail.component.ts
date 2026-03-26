@@ -6,6 +6,7 @@ import { PreferencesService } from '../../core/services/preferences.service';
 import { CartService } from '../../core/services/cart.service';
 import { SeoService } from '../../core/services/seo.service';
 import { AnalyticsService } from '../../core/services/analytics.service';
+import { ToastService } from '../../core/services/toast.service';
 import { ProductDetail } from '../../core/models';
 import { ImageGalleryComponent } from '../../shared/components/image-gallery/image-gallery.component';
 import { ShareButtonsComponent } from '../../shared/components/share-buttons/share-buttons.component';
@@ -177,6 +178,7 @@ export class ProductDetailComponent implements OnInit {
   private readonly seo = inject(SeoService);
   private readonly analytics = inject(AnalyticsService);
   private readonly cart = inject(CartService);
+  private readonly toast = inject(ToastService);
   private readonly platformId = inject(PLATFORM_ID);
   protected readonly prefs = inject(PreferencesService);
 
@@ -231,6 +233,7 @@ export class ProductDetailComponent implements OnInit {
       finalPriceUsd: p.finalPriceUsd,
     });
     this.analytics.trackAddToCart({ id: p.id, name: p.name, price: p.finalPriceUsd });
+    this.toast.success(`${p.name} agregado al carrito`);
   }
 
   private loadProduct(slug: string): void {

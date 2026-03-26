@@ -4,6 +4,7 @@ import { ProductListItem } from '../../../core/models';
 import { PreferencesService } from '../../../core/services/preferences.service';
 import { CartService } from '../../../core/services/cart.service';
 import { AnalyticsService } from '../../../core/services/analytics.service';
+import { ToastService } from '../../../core/services/toast.service';
 
 @Component({
   selector: 'app-product-card',
@@ -53,6 +54,7 @@ export class ProductCardComponent {
   protected readonly prefs = inject(PreferencesService);
   private readonly cart = inject(CartService);
   private readonly analytics = inject(AnalyticsService);
+  private readonly toast = inject(ToastService);
 
   protected onAddToCart(): void {
     const p = this.product();
@@ -64,5 +66,6 @@ export class ProductCardComponent {
       finalPriceUsd: p.finalPriceUsd,
     });
     this.analytics.trackAddToCart({ id: p.id, name: p.name, price: p.finalPriceUsd });
+    this.toast.success(`${p.name} agregado al carrito`);
   }
 }
