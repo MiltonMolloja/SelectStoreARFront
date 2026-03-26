@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, input, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { AnalyticsService } from '../../../core/services/analytics.service';
+import { ToastService } from '../../../core/services/toast.service';
 
 @Component({
   selector: 'app-share-buttons',
@@ -33,6 +34,7 @@ export class ShareButtonsComponent {
   readonly productUrl = input.required<string>();
 
   private readonly analytics = inject(AnalyticsService);
+  private readonly toast = inject(ToastService);
   private readonly platformId = inject(PLATFORM_ID);
   private readonly isBrowser = isPlatformBrowser(this.platformId);
 
@@ -54,5 +56,6 @@ export class ShareButtonsComponent {
     if (!this.isBrowser) return;
     navigator.clipboard.writeText(this.productUrl());
     this.analytics.trackShareProduct(this.productId(), 'link');
+    this.toast.success('Link copiado al portapapeles');
   }
 }

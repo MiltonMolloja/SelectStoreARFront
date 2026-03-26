@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {
   AdminProductListResponse,
+  AdminProductDetail,
   AdminProductCreateRequest,
   AdminProductCreateResponse,
   AdminProductUpdateRequest,
@@ -42,6 +43,10 @@ export class AdminApiService {
     if (params.search) httpParams = httpParams.set('search', params.search);
 
     return this.http.get<AdminProductListResponse>(`${BASE_URL}/products`, { params: httpParams });
+  }
+
+  getProduct(id: string): Observable<AdminProductDetail> {
+    return this.http.get<AdminProductDetail>(`${BASE_URL}/products/${id}`);
   }
 
   createProduct(data: AdminProductCreateRequest, images: File[]): Observable<AdminProductCreateResponse> {

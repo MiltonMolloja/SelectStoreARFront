@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { OrderRequest, OrderResponse } from '../models';
 import { CartService, CartItem } from './cart.service';
+import { PreferencesService } from './preferences.service';
 import { AnalyticsService } from './analytics.service';
 import { ToastService } from './toast.service';
 import { environment } from '../../../environments/environment';
@@ -12,6 +13,7 @@ import { environment } from '../../../environments/environment';
 export class OrderService {
   private readonly http = inject(HttpClient);
   private readonly cart = inject(CartService);
+  private readonly prefs = inject(PreferencesService);
   private readonly analytics = inject(AnalyticsService);
   private readonly toast = inject(ToastService);
   private readonly platformId = inject(PLATFORM_ID);
@@ -49,6 +51,8 @@ export class OrderService {
 
   buildWhatsAppLink(name: string, phone: string, items: CartItem[]): string {
     const totalUsd = items.reduce((sum, i) => sum + i.priceUsd * i.quantity, 0);
+    const rate = this.prefs.exchangeRate();
+    const totalArs = Math.round(totalUsd * rate);
 
     const lines: string[] = [
       `Hola! Soy ${name} 👋`,
@@ -57,12 +61,17 @@ export class OrderService {
     ];
 
     items.forEach((item, i) => {
+      const subtotalUsd = item.priceUsd * item.quantity;
+      const subtotalArs = Math.round(subtotalUsd * rate);
       lines.push(`${i + 1}. ${item.name} x${item.quantity}`);
-      lines.push(`   US$ ${(item.priceUsd * item.quantity).toFixed(2)}`);
+      lines.push(`   US$ ${subtotalUsd.toFixed(2)} ($ ${subtotalArs.toLocaleString('es-AR')})`);
       lines.push('');
     });
 
-    lines.push(`💰 Total: US$ ${totalUsd.toFixed(2)}`);
+    lines.push(`💰 Total: US$ ${totalUsd.toFixed(2)} ($ ${totalArs.toLocaleString('es-AR')})`);
+    if (rate > 0) {
+      lines.push(`💱 Cotización: $ ${rate.toLocaleString('es-AR')}`);
+    }
     lines.push(`📱 Mi teléfono: ${phone}`);
     lines.push('');
     lines.push('Quedo a la espera para coordinar. Gracias!');

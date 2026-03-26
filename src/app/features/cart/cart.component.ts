@@ -6,6 +6,7 @@ import { PreferencesService } from '../../core/services/preferences.service';
 import { AnalyticsService } from '../../core/services/analytics.service';
 import { ToastService } from '../../core/services/toast.service';
 import { OrderService } from '../../core/services/order.service';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-cart',
@@ -168,6 +169,7 @@ export class CartComponent {
   private readonly analytics = inject(AnalyticsService);
   private readonly toast = inject(ToastService);
   private readonly orderService = inject(OrderService);
+  private readonly auth = inject(AuthService);
   protected readonly cart = inject(CartService);
   protected readonly prefs = inject(PreferencesService);
   protected readonly submitting = signal(false);
@@ -176,6 +178,20 @@ export class CartComponent {
     customerName: ['', Validators.required],
     customerPhone: ['', [Validators.required, Validators.pattern(/^\+?\d{7,15}$/)]],
   });
+
+  constructor() {
+    // Validate cart items on load
+    this.cart.validateCart();
+
+    // Pre-fill from authenticated user
+    const user = this.auth.user();
+    if (user) {
+      this.checkoutForm.patchValue({
+        customerName: user.name ?? '',
+        customerPhone: user.phone ?? '',
+      });
+    }
+  }
 
   protected onQuantityChange(productId: string, quantity: number): void {
     this.cart.updateQuantity(productId, quantity);

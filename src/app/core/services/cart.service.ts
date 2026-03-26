@@ -1,5 +1,7 @@
 import { Injectable, signal, computed, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { forkJoin, of, catchError } from 'rxjs';
 
 export interface CartItem {
   productId: string;
@@ -14,6 +16,7 @@ const STORAGE_KEY = 'ssa-cart';
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
+  private readonly http = inject(HttpClient);
   private readonly platformId = inject(PLATFORM_ID);
   private readonly isBrowser = isPlatformBrowser(this.platformId);
 
@@ -79,6 +82,33 @@ export class CartService {
   clear(): void {
     this.items.set([]);
     this.saveCart();
+  }
+
+  /** Validate cart items against API — remove unavailable products */
+  validateCart(): void {
+    const items = this.items();
+    if (items.length === 0) return;
+
+    const checks = items.map(item =>
+      this.http.get<{ id: string; status: string }>(`/api/products/${item.slug}`).pipe(
+        catchError(() => of(null)),
+      ),
+    );
+
+    forkJoin(checks).subscribe(results => {
+      const validIds = new Set<string>();
+      results.forEach((result, index) => {
+        if (result && result.status !== 'inactive' && result.status !== 'deleted') {
+          validIds.add(items[index].productId);
+        }
+      });
+
+      const removed = items.filter(i => !validIds.has(i.productId));
+      if (removed.length > 0) {
+        this.items.update(current => current.filter(i => validIds.has(i.productId)));
+        this.saveCart();
+      }
+    });
   }
 
   private saveCart(): void {

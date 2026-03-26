@@ -33,6 +33,25 @@ export interface AdminProductCounts {
   total: number;
 }
 
+export interface AdminProductDetail {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  brand: string;
+  basePriceUsd: number;
+  markupPercentage: number | null;
+  finalPriceUsd: number;
+  categoryId: string;
+  category: string;
+  status: AdminProductStatus;
+  isFeatured: boolean;
+  specifications: Record<string, string>;
+  images: AdminImageResponse[];
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface AdminProductCreateRequest {
   name: string;
   description: string;

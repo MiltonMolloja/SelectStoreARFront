@@ -214,7 +214,7 @@ export class ProductFormComponent implements OnInit {
     if (id && id !== 'nuevo') {
       this.productId = id;
       this.isEditing.set(true);
-      // TODO: Load product data for editing
+      this.loadProduct(id);
     }
   }
 
@@ -313,6 +313,33 @@ export class ProductFormComponent implements OnInit {
     this.selectedFiles.update(existing => {
       const combined = [...existing, ...newFiles];
       return combined.slice(0, 10); // Max 10 images
+    });
+  }
+
+  private loadProduct(id: string): void {
+    this.api.getProduct(id).subscribe({
+      next: (product) => {
+        this.form.patchValue({
+          name: product.name,
+          brand: product.brand,
+          categoryId: product.categoryId,
+          basePriceUsd: product.basePriceUsd,
+          markupPercentage: product.markupPercentage,
+          description: product.description,
+        });
+
+        // Load specifications
+        const specs = Object.entries(product.specifications).map(([key, value]) => ({ key, value }));
+        this.specEntries.set(specs);
+
+        // Load existing images as previews
+        const existingImages = product.images.map(img => ({
+          file: null as unknown as File,
+          preview: img.thumbnail,
+          name: `image-${img.id}`,
+        }));
+        this.selectedFiles.set(existingImages);
+      },
     });
   }
 

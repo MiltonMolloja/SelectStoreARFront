@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, OnInit, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, OnInit, signal, effect } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../core/services/api.service';
@@ -171,6 +171,15 @@ export class CatalogComponent implements OnInit {
   protected readonly activeCategory = signal<Category | null>(null);
 
   private searchTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  constructor() {
+    // Reset price filter when currency changes
+    effect(() => {
+      this.prefs.currency(); // track dependency
+      this.minPrice.set(null);
+      this.maxPrice.set(null);
+    });
+  }
 
   ngOnInit(): void {
     this.loadCategories();
