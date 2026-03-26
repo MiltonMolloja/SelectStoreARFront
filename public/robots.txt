@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /auth/
+Disallow: /perfil
+Disallow: /mis-pedidos
+Disallow: /carrito
+
+Sitemap: https://selectstorear.com.ar/sitemap.xml

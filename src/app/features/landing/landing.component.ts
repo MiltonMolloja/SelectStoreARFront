@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { ApiService } from '../../core/services/api.service';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { SeoService } from '../../core/services/seo.service';
+import { JsonLdService } from '../../core/services/jsonld.service';
 import { LandingData } from '../../core/models';
 import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
 import { SkeletonCardComponent } from '../../shared/components/skeleton-card/skeleton-card.component';
@@ -166,6 +167,7 @@ export class LandingComponent implements OnInit {
   private readonly api = inject(ApiService);
   private readonly prefs = inject(PreferencesService);
   private readonly seo = inject(SeoService);
+  private readonly jsonLd = inject(JsonLdService);
 
   protected readonly data = signal<LandingData | null>(null);
   protected readonly loading = signal(true);
@@ -189,6 +191,7 @@ export class LandingComponent implements OnInit {
       'SelectStoreAR — Productos importados bajo pedido',
       'Productos importados premium bajo pedido. Celulares, consolas, perfumes y tecnología con precios en USD y ARS. Jujuy, Argentina.',
     );
+    this.jsonLd.setOrganization();
     this.loadLanding();
   }
 

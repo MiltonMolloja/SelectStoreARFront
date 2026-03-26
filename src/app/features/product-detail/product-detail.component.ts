@@ -7,6 +7,7 @@ import { CartService } from '../../core/services/cart.service';
 import { SeoService } from '../../core/services/seo.service';
 import { AnalyticsService } from '../../core/services/analytics.service';
 import { ToastService } from '../../core/services/toast.service';
+import { JsonLdService } from '../../core/services/jsonld.service';
 import { ProductDetail } from '../../core/models';
 import { ImageGalleryComponent } from '../../shared/components/image-gallery/image-gallery.component';
 import { ShareButtonsComponent } from '../../shared/components/share-buttons/share-buttons.component';
@@ -183,6 +184,7 @@ export class ProductDetailComponent implements OnInit {
   private readonly analytics = inject(AnalyticsService);
   private readonly cart = inject(CartService);
   private readonly toast = inject(ToastService);
+  private readonly jsonLd = inject(JsonLdService);
   private readonly platformId = inject(PLATFORM_ID);
   protected readonly prefs = inject(PreferencesService);
 
@@ -249,6 +251,7 @@ export class ProductDetailComponent implements OnInit {
 
         // SEO
         this.seo.updateProduct(product.seo, this.currentUrl);
+        this.jsonLd.setProduct(product);
 
         // Analytics
         this.analytics.trackProductView({
