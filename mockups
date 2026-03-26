@@ -231,7 +231,8 @@
                           "fill": "$color-text-secondary",
                           "content": "Ingresa tu nombre",
                           "fontFamily": "Inter",
-                          "fontSize": 14
+                          "fontSize": 14,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -273,7 +274,8 @@
                       "fill": "$color-text-secondary",
                       "content": "Buscar productos...",
                       "fontFamily": "Inter",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -665,21 +667,51 @@
                       "type": "ref",
                       "ref": "PwTj7",
                       "name": "headerTheme",
-                      "x": 0
+                      "x": 0,
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "descendants": {
+                        "Q0zTI": {
+                          "x": 8,
+                          "y": 8
+                        }
+                      }
                     },
                     {
                       "id": "tdfyG",
                       "type": "ref",
                       "ref": "qE9aU",
                       "name": "headerCurrency",
-                      "x": 46
+                      "x": 46,
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "y": 3,
+                      "descendants": {
+                        "MlJoR": {
+                          "x": 10,
+                          "y": 6
+                        }
+                      }
                     },
                     {
                       "id": "G1up8",
                       "type": "ref",
                       "ref": "mXOnF",
                       "name": "headerCart",
-                      "x": 105
+                      "x": 105,
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "y": 3,
+                      "descendants": {
+                        "UIijJ": {
+                          "x": 10,
+                          "y": 6
+                        },
+                        "Bq0Fj": {
+                          "x": 32,
+                          "y": 6.5
+                        }
+                      }
                     }
                   ]
                 }
@@ -839,7 +871,8 @@
                           "width": "fill_container",
                           "content": "Productos importados premium bajo pedido. Celulares, consolas, perfumes y mas.",
                           "fontFamily": "Inter",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -867,7 +900,8 @@
                           "fill": "$color-text-secondary",
                           "content": "Catalogo",
                           "fontFamily": "Inter",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "text",
@@ -876,7 +910,8 @@
                           "fill": "$color-text-secondary",
                           "content": "Contacto",
                           "fontFamily": "Inter",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -904,7 +939,8 @@
                           "fill": "$color-text-secondary",
                           "content": "WhatsApp: +54 388 XXX-XXXX",
                           "fontFamily": "Inter",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "text",
@@ -913,7 +949,8 @@
                           "fill": "$color-text-secondary",
                           "content": "Instagram: @selectstorear",
                           "fontFamily": "Inter",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -945,7 +982,8 @@
                       "fill": "$color-text-secondary",
                       "content": "© 2026 SelectStoreAR. Todos los derechos reservados.",
                       "fontFamily": "Inter",
-                      "fontSize": 12
+                      "fontSize": 12,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -1074,11 +1112,52 @@
           "name": "landingHeader",
           "y": 0,
           "descendants": {
+            "MqjgA": {
+              "x": 24,
+              "y": 20
+            },
             "R1EwS": {
-              "x": 684
+              "x": 684,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 23.5
             },
             "xKafW": {
-              "x": 1261
+              "x": 1261,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 15
+            },
+            "f85QB": {
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "f85QB/Q0zTI": {
+              "x": 8,
+              "y": 8
+            },
+            "tdfyG": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 3
+            },
+            "tdfyG/MlJoR": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "x": 105,
+              "y": 3
+            },
+            "G1up8/UIijJ": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8/Bq0Fj": {
+              "x": 32,
+              "y": 6.5
             }
           }
         },
@@ -1168,7 +1247,8 @@
                   "content": "Celulares, consolas, perfumes y tecnologia de las mejores marcas del mundo. Elegis, coordinas y en ~1 semana lo tenes en tus manos.",
                   "lineHeight": 1.6,
                   "fontFamily": "Inter",
-                  "fontSize": 17
+                  "fontSize": 17,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -1183,9 +1263,13 @@
                       "ref": "HGWLR",
                       "name": "heroCTA1",
                       "y": 0.5,
+                      "width": "fit_content",
+                      "height": "fit_content",
                       "descendants": {
                         "zIzn6": {
-                          "content": "Ver Catalogo"
+                          "content": "Ver Catalogo",
+                          "x": 24,
+                          "y": 12
                         }
                       }
                     },
@@ -1195,9 +1279,17 @@
                       "ref": "PmOrN",
                       "name": "heroCTA2",
                       "x": 152,
+                      "width": "fit_content",
+                      "height": "fit_content",
                       "descendants": {
+                        "7He8h": {
+                          "x": 24,
+                          "y": 12
+                        },
                         "6Nx82": {
-                          "content": "Consultar por WhatsApp"
+                          "content": "Consultar por WhatsApp",
+                          "x": 50,
+                          "y": 12.5
                         }
                       }
                     }
@@ -1258,7 +1350,8 @@
               "fill": "$color-text-secondary",
               "content": "En 5 simples pasos tenes tu producto importado",
               "fontFamily": "Inter",
-              "fontSize": 16
+              "fontSize": 16,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
@@ -1321,7 +1414,8 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1378,7 +1472,8 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1435,7 +1530,8 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1492,7 +1588,8 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1549,7 +1646,8 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -1587,7 +1685,8 @@
               "fill": "$color-text-secondary",
               "content": "Explora nuestras categorias de productos importados",
               "fontFamily": "Inter",
-              "fontSize": 16
+              "fontSize": 16,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
@@ -1839,6 +1938,7 @@
                   "ref": "D4f0e",
                   "width": "fill_container",
                   "name": "pc1",
+                  "height": "fit_content",
                   "descendants": {
                     "FSKE3": {
                       "width": "fill_container",
@@ -1850,23 +1950,35 @@
                       }
                     },
                     "dXTK9": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "y": 210
                     },
                     "pxovU": {
-                      "content": "Celulares"
+                      "content": "Celulares",
+                      "x": 16,
+                      "y": 16
                     },
                     "X9550": {
                       "width": "fill_container",
-                      "content": "Samsung Galaxy S26 Ultra"
+                      "content": "Samsung Galaxy S26 Ultra",
+                      "x": 16,
+                      "y": 39
                     },
                     "oxzMy": {
-                      "content": "US$ 1,250.00"
+                      "content": "US$ 1,250.00",
+                      "x": 16,
+                      "y": 65
                     },
                     "M6SxH": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "x": 16,
+                      "y": 95
                     },
                     "Lo0Rm": {
-                      "x": 81.5
+                      "x": 81.5,
+                      "y": 10
                     }
                   }
                 },
@@ -1877,6 +1989,7 @@
                   "width": "fill_container",
                   "name": "pc2",
                   "x": 325,
+                  "height": "fit_content",
                   "descendants": {
                     "FSKE3": {
                       "width": "fill_container",
@@ -1888,23 +2001,35 @@
                       }
                     },
                     "dXTK9": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "y": 210
                     },
                     "pxovU": {
-                      "content": "Consolas"
+                      "content": "Consolas",
+                      "x": 16,
+                      "y": 16
                     },
                     "X9550": {
                       "width": "fill_container",
-                      "content": "PlayStation 5 Pro"
+                      "content": "PlayStation 5 Pro",
+                      "x": 16,
+                      "y": 39
                     },
                     "oxzMy": {
-                      "content": "US$ 699.00"
+                      "content": "US$ 699.00",
+                      "x": 16,
+                      "y": 65
                     },
                     "M6SxH": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "x": 16,
+                      "y": 95
                     },
                     "Lo0Rm": {
-                      "x": 81.5
+                      "x": 81.5,
+                      "y": 10
                     }
                   }
                 },
@@ -1915,6 +2040,7 @@
                   "width": "fill_container",
                   "name": "pc3",
                   "x": 650,
+                  "height": "fit_content",
                   "descendants": {
                     "FSKE3": {
                       "width": "fill_container",
@@ -1926,23 +2052,35 @@
                       }
                     },
                     "dXTK9": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "y": 210
                     },
                     "pxovU": {
-                      "content": "Celulares"
+                      "content": "Celulares",
+                      "x": 16,
+                      "y": 16
                     },
                     "X9550": {
                       "width": "fill_container",
-                      "content": "iPhone 17 Pro Max"
+                      "content": "iPhone 17 Pro Max",
+                      "x": 16,
+                      "y": 39
                     },
                     "oxzMy": {
-                      "content": "US$ 1,399.00"
+                      "content": "US$ 1,399.00",
+                      "x": 16,
+                      "y": 65
                     },
                     "M6SxH": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "x": 16,
+                      "y": 95
                     },
                     "Lo0Rm": {
-                      "x": 81.5
+                      "x": 81.5,
+                      "y": 10
                     }
                   }
                 },
@@ -1953,6 +2091,7 @@
                   "width": "fill_container",
                   "name": "pc4",
                   "x": 975,
+                  "height": "fit_content",
                   "descendants": {
                     "FSKE3": {
                       "width": "fill_container",
@@ -1964,23 +2103,35 @@
                       }
                     },
                     "dXTK9": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "y": 210
                     },
                     "pxovU": {
-                      "content": "Tecnologia"
+                      "content": "Tecnologia",
+                      "x": 16,
+                      "y": 16
                     },
                     "X9550": {
                       "width": "fill_container",
-                      "content": "AirPods Pro 3"
+                      "content": "AirPods Pro 3",
+                      "x": 16,
+                      "y": 39
                     },
                     "oxzMy": {
-                      "content": "US$ 249.00"
+                      "content": "US$ 249.00",
+                      "x": 16,
+                      "y": 65
                     },
                     "M6SxH": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "x": 16,
+                      "y": 95
                     },
                     "Lo0Rm": {
-                      "x": 81.5
+                      "x": 81.5,
+                      "y": 10
                     }
                   }
                 }
@@ -2226,21 +2377,52 @@
           "width": "fill_container",
           "name": "landingFooter",
           "y": 2409,
+          "height": "fit_content",
           "descendants": {
             "Btczg": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 40
+            },
+            "L08VE": {
+              "height": "fit_content"
+            },
+            "aCIh5": {
+              "width": "fill_container",
+              "y": 30
             },
             "Yg6rn": {
-              "x": 720.5
+              "x": 720.5,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "eiukh": {
+              "y": 25
+            },
+            "YDd0p": {
+              "y": 49
             },
             "Fp9Hh": {
-              "x": 1197
+              "x": 1197,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "OoDgV": {
+              "y": 25
+            },
+            "XCBO8": {
+              "y": 49
             },
             "qDiVp": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 129
             },
             "Rwyxa": {
-              "x": 537.5
+              "x": 537.5,
+              "y": 16
             }
           }
         }
@@ -2265,11 +2447,52 @@
           "name": "catHeader",
           "y": 0,
           "descendants": {
+            "MqjgA": {
+              "x": 24,
+              "y": 20
+            },
             "R1EwS": {
-              "x": 684
+              "x": 684,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 23.5
             },
             "xKafW": {
-              "x": 1261
+              "x": 1261,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 15
+            },
+            "f85QB": {
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "f85QB/Q0zTI": {
+              "x": 8,
+              "y": 8
+            },
+            "tdfyG": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 3
+            },
+            "tdfyG/MlJoR": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "x": 105,
+              "y": 3
+            },
+            "G1up8/UIijJ": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8/Bq0Fj": {
+              "x": 32,
+              "y": 6.5
             }
           }
         },
@@ -2292,9 +2515,16 @@
               "name": "catBread",
               "x": 80,
               "y": 24,
+              "width": "fit_content",
+              "height": "fit_content",
               "descendants": {
+                "vShPV": {
+                  "x": 45,
+                  "y": 1
+                },
                 "l2pzc": {
-                  "content": "Catalogo"
+                  "content": "Catalogo",
+                  "x": 67
                 },
                 "wHH5O": {
                   "enabled": false
@@ -2629,7 +2859,18 @@
                           "width": "fill_container",
                           "name": "searchInst",
                           "x": 0,
-                          "y": 0
+                          "y": 0,
+                          "height": "fit_content",
+                          "descendants": {
+                            "NU65S": {
+                              "x": 14,
+                              "y": 10
+                            },
+                            "xNpho": {
+                              "x": 42,
+                              "y": 10.5
+                            }
+                          }
                         },
                         {
                           "type": "frame",
@@ -2722,6 +2963,7 @@
                               "ref": "D4f0e",
                               "width": "fill_container",
                               "name": "p1",
+                              "height": "fit_content",
                               "descendants": {
                                 "FSKE3": {
                                   "width": "fill_container",
@@ -2733,23 +2975,35 @@
                                   }
                                 },
                                 "dXTK9": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "y": 210
                                 },
                                 "pxovU": {
-                                  "content": "Celulares"
+                                  "content": "Celulares",
+                                  "x": 16,
+                                  "y": 16
                                 },
                                 "X9550": {
                                   "width": "fill_container",
-                                  "content": "Samsung Galaxy S26 Ultra"
+                                  "content": "Samsung Galaxy S26 Ultra",
+                                  "x": 16,
+                                  "y": 39
                                 },
                                 "oxzMy": {
-                                  "content": "US$ 1,250.00"
+                                  "content": "US$ 1,250.00",
+                                  "x": 16,
+                                  "y": 65
                                 },
                                 "M6SxH": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "x": 16,
+                                  "y": 95
                                 },
                                 "Lo0Rm": {
-                                  "x": 87
+                                  "x": 87,
+                                  "y": 10
                                 }
                               }
                             },
@@ -2760,6 +3014,7 @@
                               "width": "fill_container",
                               "name": "p2",
                               "x": 336,
+                              "height": "fit_content",
                               "descendants": {
                                 "FSKE3": {
                                   "width": "fill_container",
@@ -2771,23 +3026,35 @@
                                   }
                                 },
                                 "dXTK9": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "y": 210
                                 },
                                 "pxovU": {
-                                  "content": "Consolas"
+                                  "content": "Consolas",
+                                  "x": 16,
+                                  "y": 16
                                 },
                                 "X9550": {
                                   "width": "fill_container",
-                                  "content": "PlayStation 5 Pro"
+                                  "content": "PlayStation 5 Pro",
+                                  "x": 16,
+                                  "y": 39
                                 },
                                 "oxzMy": {
-                                  "content": "US$ 699.00"
+                                  "content": "US$ 699.00",
+                                  "x": 16,
+                                  "y": 65
                                 },
                                 "M6SxH": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "x": 16,
+                                  "y": 95
                                 },
                                 "Lo0Rm": {
-                                  "x": 87
+                                  "x": 87,
+                                  "y": 10
                                 }
                               }
                             },
@@ -2798,6 +3065,7 @@
                               "width": "fill_container",
                               "name": "p3",
                               "x": 672,
+                              "height": "fit_content",
                               "descendants": {
                                 "FSKE3": {
                                   "width": "fill_container",
@@ -2809,23 +3077,35 @@
                                   }
                                 },
                                 "dXTK9": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "y": 210
                                 },
                                 "pxovU": {
-                                  "content": "Celulares"
+                                  "content": "Celulares",
+                                  "x": 16,
+                                  "y": 16
                                 },
                                 "X9550": {
                                   "width": "fill_container",
-                                  "content": "iPhone 17 Pro Max"
+                                  "content": "iPhone 17 Pro Max",
+                                  "x": 16,
+                                  "y": 39
                                 },
                                 "oxzMy": {
-                                  "content": "US$ 1,399.00"
+                                  "content": "US$ 1,399.00",
+                                  "x": 16,
+                                  "y": 65
                                 },
                                 "M6SxH": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "x": 16,
+                                  "y": 95
                                 },
                                 "Lo0Rm": {
-                                  "x": 87
+                                  "x": 87,
+                                  "y": 10
                                 }
                               }
                             }
@@ -2844,6 +3124,7 @@
                               "ref": "D4f0e",
                               "width": "fill_container",
                               "name": "p4",
+                              "height": "fit_content",
                               "descendants": {
                                 "FSKE3": {
                                   "width": "fill_container",
@@ -2855,23 +3136,35 @@
                                   }
                                 },
                                 "dXTK9": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "y": 210
                                 },
                                 "pxovU": {
-                                  "content": "Tecnologia"
+                                  "content": "Tecnologia",
+                                  "x": 16,
+                                  "y": 16
                                 },
                                 "X9550": {
                                   "width": "fill_container",
-                                  "content": "AirPods Pro 3"
+                                  "content": "AirPods Pro 3",
+                                  "x": 16,
+                                  "y": 39
                                 },
                                 "oxzMy": {
-                                  "content": "US$ 249.00"
+                                  "content": "US$ 249.00",
+                                  "x": 16,
+                                  "y": 65
                                 },
                                 "M6SxH": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "x": 16,
+                                  "y": 95
                                 },
                                 "Lo0Rm": {
-                                  "x": 87
+                                  "x": 87,
+                                  "y": 10
                                 }
                               }
                             },
@@ -2882,6 +3175,7 @@
                               "width": "fill_container",
                               "name": "p5",
                               "x": 336,
+                              "height": "fit_content",
                               "descendants": {
                                 "FSKE3": {
                                   "width": "fill_container",
@@ -2893,23 +3187,35 @@
                                   }
                                 },
                                 "dXTK9": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "y": 210
                                 },
                                 "pxovU": {
-                                  "content": "Perfumes"
+                                  "content": "Perfumes",
+                                  "x": 16,
+                                  "y": 16
                                 },
                                 "X9550": {
                                   "width": "fill_container",
-                                  "content": "Dior Sauvage EDT 100ml"
+                                  "content": "Dior Sauvage EDT 100ml",
+                                  "x": 16,
+                                  "y": 39
                                 },
                                 "oxzMy": {
-                                  "content": "US$ 120.00"
+                                  "content": "US$ 120.00",
+                                  "x": 16,
+                                  "y": 65
                                 },
                                 "M6SxH": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "x": 16,
+                                  "y": 95
                                 },
                                 "Lo0Rm": {
-                                  "x": 87
+                                  "x": 87,
+                                  "y": 10
                                 }
                               }
                             },
@@ -2920,6 +3226,7 @@
                               "width": "fill_container",
                               "name": "p6",
                               "x": 672,
+                              "height": "fit_content",
                               "descendants": {
                                 "FSKE3": {
                                   "width": "fill_container",
@@ -2931,23 +3238,35 @@
                                   }
                                 },
                                 "dXTK9": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "y": 210
                                 },
                                 "pxovU": {
-                                  "content": "Consolas"
+                                  "content": "Consolas",
+                                  "x": 16,
+                                  "y": 16
                                 },
                                 "X9550": {
                                   "width": "fill_container",
-                                  "content": "Nintendo Switch 2"
+                                  "content": "Nintendo Switch 2",
+                                  "x": 16,
+                                  "y": 39
                                 },
                                 "oxzMy": {
-                                  "content": "US$ 449.00"
+                                  "content": "US$ 449.00",
+                                  "x": 16,
+                                  "y": 65
                                 },
                                 "M6SxH": {
-                                  "width": "fill_container"
+                                  "width": "fill_container",
+                                  "height": "fit_content",
+                                  "x": 16,
+                                  "y": 95
                                 },
                                 "Lo0Rm": {
-                                  "x": 87
+                                  "x": 87,
+                                  "y": 10
                                 }
                               }
                             }
@@ -3083,21 +3402,52 @@
           "width": "fill_container",
           "name": "catFooter",
           "y": 1068,
+          "height": "fit_content",
           "descendants": {
             "Btczg": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 40
+            },
+            "L08VE": {
+              "height": "fit_content"
+            },
+            "aCIh5": {
+              "width": "fill_container",
+              "y": 30
             },
             "Yg6rn": {
-              "x": 720.5
+              "x": 720.5,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "eiukh": {
+              "y": 25
+            },
+            "YDd0p": {
+              "y": 49
             },
             "Fp9Hh": {
-              "x": 1197
+              "x": 1197,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "OoDgV": {
+              "y": 25
+            },
+            "XCBO8": {
+              "y": 49
             },
             "qDiVp": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 129
             },
             "Rwyxa": {
-              "x": 537.5
+              "x": 537.5,
+              "y": 16
             }
           }
         }
@@ -3122,11 +3472,52 @@
           "name": "detHeader",
           "y": 0,
           "descendants": {
+            "MqjgA": {
+              "x": 24,
+              "y": 20
+            },
             "R1EwS": {
-              "x": 684
+              "x": 684,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 23.5
             },
             "xKafW": {
-              "x": 1261
+              "x": 1261,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 15
+            },
+            "f85QB": {
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "f85QB/Q0zTI": {
+              "x": 8,
+              "y": 8
+            },
+            "tdfyG": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 3
+            },
+            "tdfyG/MlJoR": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "x": 105,
+              "y": 3
+            },
+            "G1up8/UIijJ": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8/Bq0Fj": {
+              "x": 32,
+              "y": 6.5
             }
           }
         },
@@ -3148,7 +3539,25 @@
               "ref": "azV8I",
               "name": "detBread",
               "x": 80,
-              "y": 24
+              "y": 24,
+              "width": "fit_content",
+              "height": "fit_content",
+              "descendants": {
+                "vShPV": {
+                  "x": 45,
+                  "y": 1
+                },
+                "l2pzc": {
+                  "x": 67
+                },
+                "wHH5O": {
+                  "x": 134,
+                  "y": 1
+                },
+                "kgp6N": {
+                  "x": 156
+                }
+              }
             },
             {
               "type": "frame",
@@ -3397,11 +3806,13 @@
                           "width": "fill_container",
                           "name": "addCartBtn",
                           "y": 0,
+                          "height": "fit_content",
                           "descendants": {
                             "zIzn6": {
                               "x": 268.5,
                               "content": "Agregar al carrito",
-                              "fontSize": 16
+                              "fontSize": 16,
+                              "y": 12
                             }
                           }
                         },
@@ -3413,13 +3824,16 @@
                           "name": "waBtn",
                           "x": 0,
                           "y": 55,
+                          "height": "fit_content",
                           "descendants": {
                             "7He8h": {
-                              "x": 239
+                              "x": 239,
+                              "y": 12
                             },
                             "6Nx82": {
                               "x": 265,
-                              "content": "Consultar por WhatsApp"
+                              "content": "Consultar por WhatsApp",
+                              "y": 12.5
                             }
                           }
                         }
@@ -3855,6 +4269,7 @@
                       "ref": "D4f0e",
                       "width": "fill_container",
                       "name": "rel1",
+                      "height": "fit_content",
                       "descendants": {
                         "FSKE3": {
                           "width": "fill_container",
@@ -3866,23 +4281,35 @@
                           }
                         },
                         "dXTK9": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Celulares"
+                          "content": "Celulares",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
-                          "content": "iPhone 17 Pro Max"
+                          "content": "iPhone 17 Pro Max",
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
-                          "content": "US$ 1,399.00"
+                          "content": "US$ 1,399.00",
+                          "x": 16,
+                          "y": 65
                         },
                         "M6SxH": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 16,
+                          "y": 95
                         },
                         "Lo0Rm": {
-                          "x": 81.5
+                          "x": 81.5,
+                          "y": 10
                         }
                       }
                     },
@@ -3893,6 +4320,7 @@
                       "width": "fill_container",
                       "name": "rel2",
                       "x": 325,
+                      "height": "fit_content",
                       "descendants": {
                         "FSKE3": {
                           "width": "fill_container",
@@ -3904,23 +4332,35 @@
                           }
                         },
                         "dXTK9": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Celulares"
+                          "content": "Celulares",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
-                          "content": "Google Pixel 10 Pro"
+                          "content": "Google Pixel 10 Pro",
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
-                          "content": "US$ 999.00"
+                          "content": "US$ 999.00",
+                          "x": 16,
+                          "y": 65
                         },
                         "M6SxH": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 16,
+                          "y": 95
                         },
                         "Lo0Rm": {
-                          "x": 81.5
+                          "x": 81.5,
+                          "y": 10
                         }
                       }
                     },
@@ -3931,6 +4371,7 @@
                       "width": "fill_container",
                       "name": "rel3",
                       "x": 650,
+                      "height": "fit_content",
                       "descendants": {
                         "FSKE3": {
                           "width": "fill_container",
@@ -3942,23 +4383,35 @@
                           }
                         },
                         "dXTK9": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Tecnologia"
+                          "content": "Tecnologia",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
-                          "content": "Samsung Galaxy Watch 7"
+                          "content": "Samsung Galaxy Watch 7",
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
-                          "content": "US$ 349.00"
+                          "content": "US$ 349.00",
+                          "x": 16,
+                          "y": 65
                         },
                         "M6SxH": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 16,
+                          "y": 95
                         },
                         "Lo0Rm": {
-                          "x": 81.5
+                          "x": 81.5,
+                          "y": 10
                         }
                       }
                     },
@@ -3969,6 +4422,7 @@
                       "width": "fill_container",
                       "name": "rel4",
                       "x": 975,
+                      "height": "fit_content",
                       "descendants": {
                         "FSKE3": {
                           "width": "fill_container",
@@ -3980,23 +4434,35 @@
                           }
                         },
                         "dXTK9": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Tecnologia"
+                          "content": "Tecnologia",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
-                          "content": "Galaxy Buds 3 Pro"
+                          "content": "Galaxy Buds 3 Pro",
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
-                          "content": "US$ 199.00"
+                          "content": "US$ 199.00",
+                          "x": 16,
+                          "y": 65
                         },
                         "M6SxH": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 16,
+                          "y": 95
                         },
                         "Lo0Rm": {
-                          "x": 81.5
+                          "x": 81.5,
+                          "y": 10
                         }
                       }
                     }
@@ -4013,21 +4479,52 @@
           "width": "fill_container",
           "name": "detFooter",
           "y": 1525,
+          "height": "fit_content",
           "descendants": {
             "Btczg": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 40
+            },
+            "L08VE": {
+              "height": "fit_content"
+            },
+            "aCIh5": {
+              "width": "fill_container",
+              "y": 30
             },
             "Yg6rn": {
-              "x": 720.5
+              "x": 720.5,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "eiukh": {
+              "y": 25
+            },
+            "YDd0p": {
+              "y": 49
             },
             "Fp9Hh": {
-              "x": 1197
+              "x": 1197,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "OoDgV": {
+              "y": 25
+            },
+            "XCBO8": {
+              "y": 49
             },
             "qDiVp": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 129
             },
             "Rwyxa": {
-              "x": 537.5
+              "x": 537.5,
+              "y": 16
             }
           }
         }
@@ -4052,11 +4549,52 @@
           "name": "cartHead",
           "y": 0,
           "descendants": {
+            "MqjgA": {
+              "x": 24,
+              "y": 20
+            },
             "R1EwS": {
-              "x": 684
+              "x": 684,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 23.5
             },
             "xKafW": {
-              "x": 1261
+              "x": 1261,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 15
+            },
+            "f85QB": {
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "f85QB/Q0zTI": {
+              "x": 8,
+              "y": 8
+            },
+            "tdfyG": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 3
+            },
+            "tdfyG/MlJoR": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "x": 105,
+              "y": 3
+            },
+            "G1up8/UIijJ": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8/Bq0Fj": {
+              "x": 32,
+              "y": 6.5
             }
           }
         },
@@ -4579,15 +5117,20 @@
                       "name": "sumName",
                       "x": 24,
                       "y": 259,
+                      "height": "fit_content",
                       "descendants": {
                         "3tWfT": {
                           "content": "Nombre"
                         },
                         "Geo0S": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 22
                         },
                         "BgpyM": {
-                          "content": "Tu nombre completo"
+                          "content": "Tu nombre completo",
+                          "x": 14,
+                          "y": 10
                         }
                       }
                     },
@@ -4599,15 +5142,20 @@
                       "name": "sumPhone",
                       "x": 24,
                       "y": 338,
+                      "height": "fit_content",
                       "descendants": {
                         "3tWfT": {
                           "content": "Telefono"
                         },
                         "Geo0S": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 22
                         },
                         "BgpyM": {
-                          "content": "+54 388 XXX-XXXX"
+                          "content": "+54 388 XXX-XXXX",
+                          "x": 14,
+                          "y": 10
                         }
                       }
                     },
@@ -4619,13 +5167,16 @@
                       "name": "sumWABtn",
                       "x": 24,
                       "y": 417,
+                      "height": "fit_content",
                       "descendants": {
                         "7He8h": {
-                          "x": 66
+                          "x": 66,
+                          "y": 12
                         },
                         "6Nx82": {
                           "x": 92,
-                          "content": "Enviar pedido por WhatsApp"
+                          "content": "Enviar pedido por WhatsApp",
+                          "y": 12.5
                         }
                       }
                     },
@@ -4637,10 +5188,12 @@
                       "name": "sumClear",
                       "x": 24,
                       "y": 479,
+                      "height": "fit_content",
                       "descendants": {
                         "1cMMd": {
                           "x": 131,
-                          "content": "Vaciar carrito"
+                          "content": "Vaciar carrito",
+                          "y": 12
                         }
                       }
                     }
@@ -4657,21 +5210,52 @@
           "width": "fill_container",
           "name": "cartFooter",
           "y": 738,
+          "height": "fit_content",
           "descendants": {
             "Btczg": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 40
+            },
+            "L08VE": {
+              "height": "fit_content"
+            },
+            "aCIh5": {
+              "width": "fill_container",
+              "y": 30
             },
             "Yg6rn": {
-              "x": 720.5
+              "x": 720.5,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "eiukh": {
+              "y": 25
+            },
+            "YDd0p": {
+              "y": 49
             },
             "Fp9Hh": {
-              "x": 1197
+              "x": 1197,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "OoDgV": {
+              "y": 25
+            },
+            "XCBO8": {
+              "y": 49
             },
             "qDiVp": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 129
             },
             "Rwyxa": {
-              "x": 537.5
+              "x": 537.5,
+              "y": 16
             }
           }
         }
@@ -5295,7 +5879,15 @@
                               "ref": "I59Lf",
                               "name": "tr1c3b",
                               "x": 0,
-                              "y": 0
+                              "y": 0,
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "descendants": {
+                                "8V2DZ": {
+                                  "x": 10,
+                                  "y": 4
+                                }
+                              }
                             }
                           ]
                         },
@@ -5385,9 +5977,13 @@
                               "name": "tr2c3b",
                               "x": 0,
                               "y": 0,
+                              "width": "fit_content",
+                              "height": "fit_content",
                               "descendants": {
                                 "Iemck": {
-                                  "content": "Entregado"
+                                  "content": "Entregado",
+                                  "x": 10,
+                                  "y": 4
                                 }
                               }
                             }
@@ -5501,9 +6097,13 @@
                   "name": "rateBtn",
                   "x": 989,
                   "y": 20,
+                  "width": "fit_content",
+                  "height": "fit_content",
                   "descendants": {
                     "zIzn6": {
-                      "content": "Actualizar"
+                      "content": "Actualizar",
+                      "x": 24,
+                      "y": 12
                     }
                   }
                 }
@@ -5726,11 +6326,52 @@
           "name": "nfHeader",
           "y": 0,
           "descendants": {
+            "MqjgA": {
+              "x": 24,
+              "y": 20
+            },
             "R1EwS": {
-              "x": 684
+              "x": 684,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 23.5
             },
             "xKafW": {
-              "x": 1261
+              "x": 1261,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 15
+            },
+            "f85QB": {
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "f85QB/Q0zTI": {
+              "x": 8,
+              "y": 8
+            },
+            "tdfyG": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 3
+            },
+            "tdfyG/MlJoR": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "x": 105,
+              "y": 3
+            },
+            "G1up8/UIijJ": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8/Bq0Fj": {
+              "x": 32,
+              "y": 6.5
             }
           }
         },
@@ -5782,9 +6423,13 @@
               "name": "nfBtn",
               "x": 646.5,
               "y": 352.5,
+              "width": "fit_content",
+              "height": "fit_content",
               "descendants": {
                 "zIzn6": {
-                  "content": "Volver al inicio"
+                  "content": "Volver al inicio",
+                  "x": 24,
+                  "y": 12
                 }
               }
             }
@@ -5812,11 +6457,52 @@
           "name": "ecHeader",
           "y": 0,
           "descendants": {
+            "MqjgA": {
+              "x": 24,
+              "y": 20
+            },
             "R1EwS": {
-              "x": 684
+              "x": 684,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 23.5
             },
             "xKafW": {
-              "x": 1261
+              "x": 1261,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 15
+            },
+            "f85QB": {
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "f85QB/Q0zTI": {
+              "x": 8,
+              "y": 8
+            },
+            "tdfyG": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 3
+            },
+            "tdfyG/MlJoR": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "x": 105,
+              "y": 3
+            },
+            "G1up8/UIijJ": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8/Bq0Fj": {
+              "x": 32,
+              "y": 6.5
             }
           }
         },
@@ -5881,9 +6567,13 @@
               "name": "ecBtn",
               "x": 653,
               "y": 341,
+              "width": "fit_content",
+              "height": "fit_content",
               "descendants": {
                 "zIzn6": {
-                  "content": "Ver catalogo"
+                  "content": "Ver catalogo",
+                  "x": 24,
+                  "y": 12
                 }
               }
             }
@@ -5913,11 +6603,52 @@
           "name": "landingHeader",
           "y": 0,
           "descendants": {
+            "MqjgA": {
+              "x": 24,
+              "y": 20
+            },
             "R1EwS": {
-              "x": 684
+              "x": 684,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 23.5
             },
             "xKafW": {
-              "x": 1261
+              "x": 1261,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 15
+            },
+            "f85QB": {
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "f85QB/Q0zTI": {
+              "x": 8,
+              "y": 8
+            },
+            "tdfyG": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 3
+            },
+            "tdfyG/MlJoR": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "x": 105,
+              "y": 3
+            },
+            "G1up8/UIijJ": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8/Bq0Fj": {
+              "x": 32,
+              "y": 6.5
             }
           }
         },
@@ -6007,7 +6738,8 @@
                   "content": "Celulares, consolas, perfumes y tecnologia de las mejores marcas del mundo. Elegis, coordinas y en ~1 semana lo tenes en tus manos.",
                   "lineHeight": 1.6,
                   "fontFamily": "Inter",
-                  "fontSize": 17
+                  "fontSize": 17,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -6022,9 +6754,13 @@
                       "ref": "HGWLR",
                       "name": "heroCTA1",
                       "y": 0.5,
+                      "width": "fit_content",
+                      "height": "fit_content",
                       "descendants": {
                         "zIzn6": {
-                          "content": "Ver Catalogo"
+                          "content": "Ver Catalogo",
+                          "x": 24,
+                          "y": 12
                         }
                       }
                     },
@@ -6034,9 +6770,17 @@
                       "ref": "PmOrN",
                       "name": "heroCTA2",
                       "x": 152,
+                      "width": "fit_content",
+                      "height": "fit_content",
                       "descendants": {
+                        "7He8h": {
+                          "x": 24,
+                          "y": 12
+                        },
                         "6Nx82": {
-                          "content": "Consultar por WhatsApp"
+                          "content": "Consultar por WhatsApp",
+                          "x": 50,
+                          "y": 12.5
                         }
                       }
                     }
@@ -6097,7 +6841,8 @@
               "fill": "$color-text-secondary",
               "content": "En 5 simples pasos tenes tu producto importado",
               "fontFamily": "Inter",
-              "fontSize": 16
+              "fontSize": 16,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
@@ -6160,7 +6905,8 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6217,7 +6963,8 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6274,7 +7021,8 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6331,7 +7079,8 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6388,7 +7137,8 @@
                       "lineHeight": 1.5,
                       "textAlign": "center",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -6426,7 +7176,8 @@
               "fill": "$color-text-secondary",
               "content": "Explora nuestras categorias de productos importados",
               "fontFamily": "Inter",
-              "fontSize": 16
+              "fontSize": 16,
+              "fontWeight": "normal"
             },
             {
               "type": "frame",
@@ -6678,6 +7429,7 @@
                   "ref": "D4f0e",
                   "width": "fill_container",
                   "name": "pc1",
+                  "height": "fit_content",
                   "descendants": {
                     "FSKE3": {
                       "width": "fill_container",
@@ -6689,23 +7441,35 @@
                       }
                     },
                     "dXTK9": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "y": 210
                     },
                     "pxovU": {
-                      "content": "Celulares"
+                      "content": "Celulares",
+                      "x": 16,
+                      "y": 16
                     },
                     "X9550": {
                       "width": "fill_container",
-                      "content": "Samsung Galaxy S26 Ultra"
+                      "content": "Samsung Galaxy S26 Ultra",
+                      "x": 16,
+                      "y": 39
                     },
                     "oxzMy": {
-                      "content": "US$ 1,250.00"
+                      "content": "US$ 1,250.00",
+                      "x": 16,
+                      "y": 65
                     },
                     "M6SxH": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "x": 16,
+                      "y": 95
                     },
                     "Lo0Rm": {
-                      "x": 81.5
+                      "x": 81.5,
+                      "y": 10
                     }
                   }
                 },
@@ -6716,6 +7480,7 @@
                   "width": "fill_container",
                   "name": "pc2",
                   "x": 325,
+                  "height": "fit_content",
                   "descendants": {
                     "FSKE3": {
                       "width": "fill_container",
@@ -6727,23 +7492,35 @@
                       }
                     },
                     "dXTK9": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "y": 210
                     },
                     "pxovU": {
-                      "content": "Consolas"
+                      "content": "Consolas",
+                      "x": 16,
+                      "y": 16
                     },
                     "X9550": {
                       "width": "fill_container",
-                      "content": "PlayStation 5 Pro"
+                      "content": "PlayStation 5 Pro",
+                      "x": 16,
+                      "y": 39
                     },
                     "oxzMy": {
-                      "content": "US$ 699.00"
+                      "content": "US$ 699.00",
+                      "x": 16,
+                      "y": 65
                     },
                     "M6SxH": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "x": 16,
+                      "y": 95
                     },
                     "Lo0Rm": {
-                      "x": 81.5
+                      "x": 81.5,
+                      "y": 10
                     }
                   }
                 },
@@ -6754,6 +7531,7 @@
                   "width": "fill_container",
                   "name": "pc3",
                   "x": 650,
+                  "height": "fit_content",
                   "descendants": {
                     "FSKE3": {
                       "width": "fill_container",
@@ -6765,23 +7543,35 @@
                       }
                     },
                     "dXTK9": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "y": 210
                     },
                     "pxovU": {
-                      "content": "Celulares"
+                      "content": "Celulares",
+                      "x": 16,
+                      "y": 16
                     },
                     "X9550": {
                       "width": "fill_container",
-                      "content": "iPhone 17 Pro Max"
+                      "content": "iPhone 17 Pro Max",
+                      "x": 16,
+                      "y": 39
                     },
                     "oxzMy": {
-                      "content": "US$ 1,399.00"
+                      "content": "US$ 1,399.00",
+                      "x": 16,
+                      "y": 65
                     },
                     "M6SxH": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "x": 16,
+                      "y": 95
                     },
                     "Lo0Rm": {
-                      "x": 81.5
+                      "x": 81.5,
+                      "y": 10
                     }
                   }
                 },
@@ -6792,6 +7582,7 @@
                   "width": "fill_container",
                   "name": "pc4",
                   "x": 975,
+                  "height": "fit_content",
                   "descendants": {
                     "FSKE3": {
                       "width": "fill_container",
@@ -6803,23 +7594,35 @@
                       }
                     },
                     "dXTK9": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "y": 210
                     },
                     "pxovU": {
-                      "content": "Tecnologia"
+                      "content": "Tecnologia",
+                      "x": 16,
+                      "y": 16
                     },
                     "X9550": {
                       "width": "fill_container",
-                      "content": "AirPods Pro 3"
+                      "content": "AirPods Pro 3",
+                      "x": 16,
+                      "y": 39
                     },
                     "oxzMy": {
-                      "content": "US$ 249.00"
+                      "content": "US$ 249.00",
+                      "x": 16,
+                      "y": 65
                     },
                     "M6SxH": {
-                      "width": "fill_container"
+                      "width": "fill_container",
+                      "height": "fit_content",
+                      "x": 16,
+                      "y": 95
                     },
                     "Lo0Rm": {
-                      "x": 81.5
+                      "x": 81.5,
+                      "y": 10
                     }
                   }
                 }
@@ -7065,21 +7868,52 @@
           "width": "fill_container",
           "name": "landingFooter",
           "y": 2409,
+          "height": "fit_content",
           "descendants": {
             "Btczg": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 40
+            },
+            "L08VE": {
+              "height": "fit_content"
+            },
+            "aCIh5": {
+              "width": "fill_container",
+              "y": 30
             },
             "Yg6rn": {
-              "x": 720.5
+              "x": 720.5,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "eiukh": {
+              "y": 25
+            },
+            "YDd0p": {
+              "y": 49
             },
             "Fp9Hh": {
-              "x": 1197
+              "x": 1197,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "OoDgV": {
+              "y": 25
+            },
+            "XCBO8": {
+              "y": 49
             },
             "qDiVp": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 129
             },
             "Rwyxa": {
-              "x": 537.5
+              "x": 537.5,
+              "y": 16
             }
           }
         }
@@ -7107,11 +7941,52 @@
           "name": "detHeader",
           "y": 0,
           "descendants": {
+            "MqjgA": {
+              "x": 24,
+              "y": 20
+            },
             "R1EwS": {
-              "x": 684
+              "x": 684,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 23.5
             },
             "xKafW": {
-              "x": 1261
+              "x": 1261,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 15
+            },
+            "f85QB": {
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "f85QB/Q0zTI": {
+              "x": 8,
+              "y": 8
+            },
+            "tdfyG": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 3
+            },
+            "tdfyG/MlJoR": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "x": 105,
+              "y": 3
+            },
+            "G1up8/UIijJ": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8/Bq0Fj": {
+              "x": 32,
+              "y": 6.5
             }
           }
         },
@@ -7133,7 +8008,25 @@
               "ref": "azV8I",
               "name": "detBread",
               "x": 80,
-              "y": 24
+              "y": 24,
+              "width": "fit_content",
+              "height": "fit_content",
+              "descendants": {
+                "vShPV": {
+                  "x": 45,
+                  "y": 1
+                },
+                "l2pzc": {
+                  "x": 67
+                },
+                "wHH5O": {
+                  "x": 134,
+                  "y": 1
+                },
+                "kgp6N": {
+                  "x": 156
+                }
+              }
             },
             {
               "type": "frame",
@@ -7382,11 +8275,13 @@
                           "width": "fill_container",
                           "name": "addCartBtn",
                           "y": 0,
+                          "height": "fit_content",
                           "descendants": {
                             "zIzn6": {
                               "x": 268.5,
                               "content": "Agregar al carrito",
-                              "fontSize": 16
+                              "fontSize": 16,
+                              "y": 12
                             }
                           }
                         },
@@ -7398,13 +8293,16 @@
                           "name": "waBtn",
                           "x": 0,
                           "y": 55,
+                          "height": "fit_content",
                           "descendants": {
                             "7He8h": {
-                              "x": 239
+                              "x": 239,
+                              "y": 12
                             },
                             "6Nx82": {
                               "x": 265,
-                              "content": "Consultar por WhatsApp"
+                              "content": "Consultar por WhatsApp",
+                              "y": 12.5
                             }
                           }
                         }
@@ -7840,6 +8738,7 @@
                       "ref": "D4f0e",
                       "width": "fill_container",
                       "name": "rel1",
+                      "height": "fit_content",
                       "descendants": {
                         "FSKE3": {
                           "width": "fill_container",
@@ -7851,23 +8750,35 @@
                           }
                         },
                         "dXTK9": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Celulares"
+                          "content": "Celulares",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
-                          "content": "iPhone 17 Pro Max"
+                          "content": "iPhone 17 Pro Max",
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
-                          "content": "US$ 1,399.00"
+                          "content": "US$ 1,399.00",
+                          "x": 16,
+                          "y": 65
                         },
                         "M6SxH": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 16,
+                          "y": 95
                         },
                         "Lo0Rm": {
-                          "x": 81.5
+                          "x": 81.5,
+                          "y": 10
                         }
                       }
                     },
@@ -7878,6 +8789,7 @@
                       "width": "fill_container",
                       "name": "rel2",
                       "x": 325,
+                      "height": "fit_content",
                       "descendants": {
                         "FSKE3": {
                           "width": "fill_container",
@@ -7889,23 +8801,35 @@
                           }
                         },
                         "dXTK9": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Celulares"
+                          "content": "Celulares",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
-                          "content": "Google Pixel 10 Pro"
+                          "content": "Google Pixel 10 Pro",
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
-                          "content": "US$ 999.00"
+                          "content": "US$ 999.00",
+                          "x": 16,
+                          "y": 65
                         },
                         "M6SxH": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 16,
+                          "y": 95
                         },
                         "Lo0Rm": {
-                          "x": 81.5
+                          "x": 81.5,
+                          "y": 10
                         }
                       }
                     },
@@ -7916,6 +8840,7 @@
                       "width": "fill_container",
                       "name": "rel3",
                       "x": 650,
+                      "height": "fit_content",
                       "descendants": {
                         "FSKE3": {
                           "width": "fill_container",
@@ -7927,23 +8852,35 @@
                           }
                         },
                         "dXTK9": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Tecnologia"
+                          "content": "Tecnologia",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
-                          "content": "Samsung Galaxy Watch 7"
+                          "content": "Samsung Galaxy Watch 7",
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
-                          "content": "US$ 349.00"
+                          "content": "US$ 349.00",
+                          "x": 16,
+                          "y": 65
                         },
                         "M6SxH": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 16,
+                          "y": 95
                         },
                         "Lo0Rm": {
-                          "x": 81.5
+                          "x": 81.5,
+                          "y": 10
                         }
                       }
                     },
@@ -7954,6 +8891,7 @@
                       "width": "fill_container",
                       "name": "rel4",
                       "x": 975,
+                      "height": "fit_content",
                       "descendants": {
                         "FSKE3": {
                           "width": "fill_container",
@@ -7965,23 +8903,35 @@
                           }
                         },
                         "dXTK9": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Tecnologia"
+                          "content": "Tecnologia",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
-                          "content": "Galaxy Buds 3 Pro"
+                          "content": "Galaxy Buds 3 Pro",
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
-                          "content": "US$ 199.00"
+                          "content": "US$ 199.00",
+                          "x": 16,
+                          "y": 65
                         },
                         "M6SxH": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 16,
+                          "y": 95
                         },
                         "Lo0Rm": {
-                          "x": 81.5
+                          "x": 81.5,
+                          "y": 10
                         }
                       }
                     }
@@ -7998,21 +8948,52 @@
           "width": "fill_container",
           "name": "detFooter",
           "y": 1525,
+          "height": "fit_content",
           "descendants": {
             "Btczg": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 40
+            },
+            "L08VE": {
+              "height": "fit_content"
+            },
+            "aCIh5": {
+              "width": "fill_container",
+              "y": 30
             },
             "Yg6rn": {
-              "x": 720.5
+              "x": 720.5,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "eiukh": {
+              "y": 25
+            },
+            "YDd0p": {
+              "y": 49
             },
             "Fp9Hh": {
-              "x": 1197
+              "x": 1197,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "OoDgV": {
+              "y": 25
+            },
+            "XCBO8": {
+              "y": 49
             },
             "qDiVp": {
-              "width": "fill_container"
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 129
             },
             "Rwyxa": {
-              "x": 537.5
+              "x": 537.5,
+              "y": 16
             }
           }
         }
@@ -8071,21 +9052,51 @@
                   "type": "ref",
                   "ref": "PwTj7",
                   "name": "mobTheme",
-                  "x": 0
+                  "x": 0,
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "descendants": {
+                    "Q0zTI": {
+                      "x": 8,
+                      "y": 8
+                    }
+                  }
                 },
                 {
                   "id": "epJ9W",
                   "type": "ref",
                   "ref": "qE9aU",
                   "name": "mobCurrency",
-                  "x": 42
+                  "x": 42,
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "y": 3,
+                  "descendants": {
+                    "MlJoR": {
+                      "x": 10,
+                      "y": 6
+                    }
+                  }
                 },
                 {
                   "id": "Mf30W",
                   "type": "ref",
                   "ref": "mXOnF",
                   "name": "mobCartBadge",
-                  "x": 97
+                  "x": 97,
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "y": 3,
+                  "descendants": {
+                    "UIijJ": {
+                      "x": 10,
+                      "y": 6
+                    },
+                    "Bq0Fj": {
+                      "x": 32,
+                      "y": 6.5
+                    }
+                  }
                 },
                 {
                   "type": "frame",
@@ -8229,10 +9240,12 @@
                   "width": "fill_container",
                   "name": "mobCTA1",
                   "y": 0,
+                  "height": "fit_content",
                   "descendants": {
                     "zIzn6": {
                       "x": 131,
-                      "content": "Ver Catalogo"
+                      "content": "Ver Catalogo",
+                      "y": 12
                     }
                   }
                 },
@@ -8244,13 +9257,16 @@
                   "name": "mobCTA2",
                   "x": 0,
                   "y": 51,
+                  "height": "fit_content",
                   "descendants": {
                     "7He8h": {
-                      "x": 126
+                      "x": 126,
+                      "y": 12
                     },
                     "6Nx82": {
                       "x": 152,
-                      "content": "WhatsApp"
+                      "content": "WhatsApp",
+                      "y": 12.5
                     }
                   }
                 }
@@ -8758,6 +9774,7 @@
                       "ref": "D4f0e",
                       "width": "fill_container",
                       "name": "mf1",
+                      "height": "fit_content",
                       "descendants": {
                         "FSKE3": {
                           "width": "fill_container",
@@ -8769,26 +9786,38 @@
                           }
                         },
                         "dXTK9": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Celulares"
+                          "content": "Celulares",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
                           "content": "Galaxy S26 Ultra",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
                           "content": "US$ 1,250",
-                          "fontSize": 15
+                          "fontSize": 15,
+                          "x": 16,
+                          "y": 63
                         },
                         "M6SxH": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 16,
+                          "y": 89
                         },
                         "Lo0Rm": {
                           "x": 22,
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "y": 10
                         }
                       }
                     },
@@ -8812,28 +9841,37 @@
                         },
                         "dXTK9": {
                           "width": "fill_container",
-                          "height": "fit_content"
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Consolas"
+                          "content": "Consolas",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
                           "content": "PlayStation 5 Pro",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
                           "y": 63,
                           "content": "US$ 699",
-                          "fontSize": 15
+                          "fontSize": 15,
+                          "x": 16
                         },
                         "M6SxH": {
                           "width": "fill_container",
-                          "y": 89
+                          "y": 89,
+                          "height": "fit_content",
+                          "x": 16
                         },
                         "Lo0Rm": {
                           "x": 22,
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "y": 10
                         }
                       }
                     }
@@ -8852,6 +9890,7 @@
                       "ref": "D4f0e",
                       "width": "fill_container",
                       "name": "mf3",
+                      "height": "fit_content",
                       "descendants": {
                         "FSKE3": {
                           "width": "fill_container",
@@ -8863,26 +9902,38 @@
                           }
                         },
                         "dXTK9": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Celulares"
+                          "content": "Celulares",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
                           "content": "iPhone 17 Pro Max",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
                           "content": "US$ 1,399",
-                          "fontSize": 15
+                          "fontSize": 15,
+                          "x": 16,
+                          "y": 63
                         },
                         "M6SxH": {
-                          "width": "fill_container"
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "x": 16,
+                          "y": 89
                         },
                         "Lo0Rm": {
                           "x": 22,
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "y": 10
                         }
                       }
                     },
@@ -8906,28 +9957,37 @@
                         },
                         "dXTK9": {
                           "width": "fill_container",
-                          "height": "fit_content"
+                          "height": "fit_content",
+                          "y": 210
                         },
                         "pxovU": {
-                          "content": "Tecnologia"
+                          "content": "Tecnologia",
+                          "x": 16,
+                          "y": 16
                         },
                         "X9550": {
                           "width": "fill_container",
                           "content": "AirPods Pro 3",
-                          "fontSize": 13
+                          "fontSize": 13,
+                          "x": 16,
+                          "y": 39
                         },
                         "oxzMy": {
                           "y": 63,
                           "content": "US$ 249",
-                          "fontSize": 15
+                          "fontSize": 15,
+                          "x": 16
                         },
                         "M6SxH": {
                           "width": "fill_container",
-                          "y": 89
+                          "y": 89,
+                          "height": "fit_content",
+                          "x": 16
                         },
                         "Lo0Rm": {
                           "x": 22,
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "y": 10
                         }
                       }
                     }
@@ -9288,9 +10348,13 @@
                   "name": "apNewBtn",
                   "x": 956,
                   "y": 0,
+                  "width": "fit_content",
+                  "height": "fit_content",
                   "descendants": {
                     "zIzn6": {
-                      "content": "+ Nuevo producto"
+                      "content": "+ Nuevo producto",
+                      "x": 24,
+                      "y": 12
                     }
                   }
                 }
@@ -9303,7 +10367,18 @@
               "width": "fill_container",
               "name": "apSearch",
               "x": 32,
-              "y": 97
+              "y": 97,
+              "height": "fit_content",
+              "descendants": {
+                "NU65S": {
+                  "x": 14,
+                  "y": 10
+                },
+                "xNpho": {
+                  "x": 42,
+                  "y": 10.5
+                }
+              }
             },
             {
               "type": "frame",
@@ -9550,7 +10625,15 @@
                           "ref": "QA0oT",
                           "name": "tr1badge",
                           "x": 0,
-                          "y": 0
+                          "y": 0,
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "descendants": {
+                            "Iemck": {
+                              "x": 10,
+                              "y": 4
+                            }
+                          }
                         }
                       ]
                     },
@@ -9696,7 +10779,15 @@
                           "ref": "QA0oT",
                           "name": "tr2badge",
                           "x": 0,
-                          "y": 0
+                          "y": 0,
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "descendants": {
+                            "Iemck": {
+                              "x": 10,
+                              "y": 4
+                            }
+                          }
                         }
                       ]
                     },
@@ -9734,6 +10825,1244 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "XjIvZ",
+      "x": 1500,
+      "y": 16558,
+      "name": "Admin Pedido Detalle",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "$color-bg",
+      "children": [
+        {
+          "type": "frame",
+          "id": "t8JfK",
+          "name": "aoSidebar",
+          "width": 250,
+          "height": "fill_container",
+          "fill": "$color-surface",
+          "stroke": {
+            "thickness": {
+              "right": 1
+            },
+            "fill": "$color-border"
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": [
+            24,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "5JZ3A",
+              "name": "aoLogoW",
+              "width": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Y8Ld7",
+                  "name": "aoLogo",
+                  "fill": "$color-accent",
+                  "content": "SelectStoreAR",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mlftg",
+              "name": "aoLabelW",
+              "width": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                8,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "eyX8u",
+                  "name": "aoLabel",
+                  "fill": "$color-text-secondary",
+                  "content": "ADMIN",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "LB1eU",
+              "name": "aoNavOrd",
+              "width": "fill_container",
+              "fill": "$color-accent-light",
+              "cornerRadius": 8,
+              "gap": 10,
+              "padding": [
+                10,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "xZ2fm",
+                  "name": "aoNavOrdI",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "shopping-bag",
+                  "iconFontFamily": "lucide",
+                  "fill": "$color-accent"
+                },
+                {
+                  "type": "text",
+                  "id": "M8D4S",
+                  "name": "aoNavOrdT",
+                  "fill": "$color-accent",
+                  "content": "Pedidos",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rJQGS",
+          "name": "Order Detail Main",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": 32,
+          "children": [
+            {
+              "type": "text",
+              "id": "bggUj",
+              "name": "aoBack",
+              "fill": "$color-accent",
+              "content": "← Volver a pedidos",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "500"
+            },
+            {
+              "type": "frame",
+              "id": "AJAV9",
+              "name": "aoHeader",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "stzRE",
+                  "name": "aoTitle",
+                  "fill": "$color-text-primary",
+                  "content": "Pedido #SSA-001",
+                  "fontFamily": "Inter",
+                  "fontSize": 28,
+                  "fontWeight": "700"
+                },
+                {
+                  "id": "SZmef",
+                  "type": "ref",
+                  "ref": "I59Lf",
+                  "name": "aoBadge",
+                  "x": 1065,
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "y": 6.5,
+                  "descendants": {
+                    "8V2DZ": {
+                      "x": 10,
+                      "y": 4
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EqXmf",
+              "name": "aoContent",
+              "width": "fill_container",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HMojF",
+                  "name": "aoInfo",
+                  "width": "fill_container",
+                  "fill": "$color-surface",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$color-border"
+                  },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "yMsCb",
+                      "name": "aoInfoTitle",
+                      "fill": "$color-text-primary",
+                      "content": "Informacion del pedido",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rHQpU",
+                      "name": "aoRow1",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "efcCT",
+                          "name": "aoR1L",
+                          "fill": "$color-text-secondary",
+                          "content": "Cliente",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "rdxUR",
+                          "name": "aoR1R",
+                          "fill": "$color-text-primary",
+                          "content": "Juan Perez",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pYPBU",
+                      "name": "aoRow2",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "g7pfO",
+                          "name": "aoR2L",
+                          "fill": "$color-text-secondary",
+                          "content": "Telefono",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "LARC8",
+                          "name": "aoR2R",
+                          "fill": "$color-text-primary",
+                          "content": "+54 388 555-1234",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mmw1S",
+                      "name": "aoRow3",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Sw8v7",
+                          "name": "aoR3L",
+                          "fill": "$color-text-secondary",
+                          "content": "Total",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "IN19m",
+                          "name": "aoR3R",
+                          "fill": "$color-accent",
+                          "content": "US$ 1,748.00",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "800"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "2qsj6",
+                      "name": "aoRow4",
+                      "width": "fill_container",
+                      "justifyContent": "space_between",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Qaska",
+                          "name": "aoR4L",
+                          "fill": "$color-text-secondary",
+                          "content": "Fecha",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "WqZXb",
+                          "name": "aoR4R",
+                          "fill": "$color-text-primary",
+                          "content": "24 Mar 2026, 14:30",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "N0ejS",
+                      "name": "aoDivider",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "$color-border"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Kxann",
+                      "name": "aoItemsTitle",
+                      "fill": "$color-text-primary",
+                      "content": "Productos",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "JLvCg",
+                      "name": "aoItem1",
+                      "fill": "$color-text-secondary",
+                      "content": "Samsung Galaxy S26 Ultra x1 — US$ 1,250.00",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "XjNg6",
+                      "name": "aoItem2",
+                      "fill": "$color-text-secondary",
+                      "content": "AirPods Pro 3 x2 — US$ 498.00",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "uBgEQ",
+                      "name": "aoStatusChange",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YmLtO",
+                          "name": "aoStatusLabel",
+                          "fill": "$color-text-secondary",
+                          "content": "Cambiar estado:",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "P3ryr",
+                          "name": "aoStatusSelect",
+                          "fill": "$color-surface",
+                          "cornerRadius": 6,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "$color-border"
+                          },
+                          "gap": 6,
+                          "padding": [
+                            8,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "C8V45",
+                              "name": "aoStatusText",
+                              "fill": "$color-text-primary",
+                              "content": "Pedido al proveedor",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "icon_font",
+                              "id": "SNM8Z",
+                              "name": "aoStatusChev",
+                              "width": 14,
+                              "height": 14,
+                              "iconFontName": "chevron-down",
+                              "iconFontFamily": "lucide",
+                              "fill": "$color-text-secondary"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "VYzi5",
+      "x": 1500,
+      "y": 17558,
+      "name": "Perfil de Usuario",
+      "clip": true,
+      "width": 1440,
+      "fill": "$color-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "VFi5k",
+          "type": "ref",
+          "ref": "xAdIY",
+          "width": "fill_container",
+          "name": "profHeader",
+          "y": 0,
+          "descendants": {
+            "MqjgA": {
+              "x": 24,
+              "y": 20
+            },
+            "R1EwS": {
+              "x": 684,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 23.5
+            },
+            "xKafW": {
+              "x": 1261,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 15
+            },
+            "f85QB": {
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "f85QB/Q0zTI": {
+              "x": 8,
+              "y": 8
+            },
+            "tdfyG": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 3
+            },
+            "tdfyG/MlJoR": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "x": 105,
+              "y": 3
+            },
+            "G1up8/UIijJ": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8/Bq0Fj": {
+              "x": 32,
+              "y": 6.5
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "zrifo",
+          "name": "profContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            32,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "jFEho",
+              "name": "profTitle",
+              "fill": "$color-text-primary",
+              "content": "Mi Perfil",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "e0mRp",
+              "name": "profCard",
+              "width": 600,
+              "fill": "$color-surface",
+              "cornerRadius": 16,
+              "stroke": {
+                "thickness": 1,
+                "fill": "$color-border"
+              },
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "oFxYn",
+                  "name": "profAvatar",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "csuhh",
+                      "name": "profAvatarCircle",
+                      "width": 64,
+                      "height": 64,
+                      "fill": "$color-accent",
+                      "cornerRadius": 32,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YXKLP",
+                          "name": "profAvatarLetter",
+                          "fill": "#ffffff",
+                          "content": "JP",
+                          "fontFamily": "Inter",
+                          "fontSize": 24,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "2rUDQ",
+                      "name": "profAvatarInfo",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "HKs8r",
+                          "name": "profAvatarName",
+                          "fill": "$color-text-primary",
+                          "content": "Juan Perez",
+                          "fontFamily": "Inter",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "e6g75",
+                          "name": "profAvatarEmail",
+                          "fill": "$color-text-secondary",
+                          "content": "juan.perez@gmail.com",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "2hKYc",
+                  "name": "profDivider",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "$color-border"
+                },
+                {
+                  "type": "frame",
+                  "id": "GHMyR",
+                  "name": "profForm",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "UtoBG",
+                      "type": "ref",
+                      "ref": "9NpOY",
+                      "width": "fill_container",
+                      "name": "profName",
+                      "height": "fit_content",
+                      "descendants": {
+                        "3tWfT": {
+                          "content": "Nombre completo"
+                        },
+                        "Geo0S": {
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 22
+                        },
+                        "BgpyM": {
+                          "content": "Juan Perez",
+                          "x": 14,
+                          "y": 10
+                        }
+                      }
+                    },
+                    {
+                      "id": "FFWJx",
+                      "type": "ref",
+                      "ref": "9NpOY",
+                      "width": "fill_container",
+                      "name": "profPhone",
+                      "y": 75,
+                      "height": "fit_content",
+                      "descendants": {
+                        "3tWfT": {
+                          "content": "Telefono"
+                        },
+                        "Geo0S": {
+                          "width": "fill_container",
+                          "height": "fit_content",
+                          "y": 22
+                        },
+                        "BgpyM": {
+                          "content": "+54 388 555-1234",
+                          "x": 14,
+                          "y": 10
+                        }
+                      }
+                    },
+                    {
+                      "id": "7GPaz",
+                      "type": "ref",
+                      "ref": "HGWLR",
+                      "width": "fill_container",
+                      "name": "profSaveBtn",
+                      "y": 150,
+                      "height": "fit_content",
+                      "descendants": {
+                        "zIzn6": {
+                          "x": 210,
+                          "content": "Guardar cambios",
+                          "y": 12
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "jJJCM",
+          "type": "ref",
+          "ref": "O1MbO",
+          "width": "fill_container",
+          "name": "profFooter",
+          "y": 562,
+          "height": "fit_content",
+          "descendants": {
+            "Btczg": {
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 40
+            },
+            "L08VE": {
+              "height": "fit_content"
+            },
+            "aCIh5": {
+              "width": "fill_container",
+              "y": 30
+            },
+            "Yg6rn": {
+              "x": 720.5,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "eiukh": {
+              "y": 25
+            },
+            "YDd0p": {
+              "y": 49
+            },
+            "Fp9Hh": {
+              "x": 1197,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "OoDgV": {
+              "y": 25
+            },
+            "XCBO8": {
+              "y": 49
+            },
+            "qDiVp": {
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 129
+            },
+            "Rwyxa": {
+              "x": 537.5,
+              "y": 16
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "gOhE0",
+      "x": 1500,
+      "y": 18420,
+      "name": "Historial de Pedidos",
+      "clip": true,
+      "width": 1440,
+      "fill": "$color-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "tusJ2",
+          "type": "ref",
+          "ref": "xAdIY",
+          "width": "fill_container",
+          "name": "histHeader",
+          "y": 0,
+          "descendants": {
+            "MqjgA": {
+              "x": 24,
+              "y": 20
+            },
+            "R1EwS": {
+              "x": 684,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 23.5
+            },
+            "xKafW": {
+              "x": 1261,
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 15
+            },
+            "f85QB": {
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "f85QB/Q0zTI": {
+              "x": 8,
+              "y": 8
+            },
+            "tdfyG": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "y": 3
+            },
+            "tdfyG/MlJoR": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8": {
+              "width": "fit_content",
+              "height": "fit_content",
+              "x": 105,
+              "y": 3
+            },
+            "G1up8/UIijJ": {
+              "x": 10,
+              "y": 6
+            },
+            "G1up8/Bq0Fj": {
+              "x": 32,
+              "y": 6.5
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "TYVQs",
+          "name": "histContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            32,
+            80
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "NRSbW",
+              "name": "histTitle",
+              "fill": "$color-text-primary",
+              "content": "Mis Pedidos",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "OjyfA",
+              "name": "Orders History",
+              "clip": true,
+              "width": "fill_container",
+              "cornerRadius": 12,
+              "stroke": {
+                "thickness": 1,
+                "fill": "$color-border"
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "OdGDY",
+                  "name": "histHead",
+                  "width": "fill_container",
+                  "fill": "$color-surface",
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "vLm1i",
+                      "name": "hth1",
+                      "width": 120,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "utMf8",
+                          "name": "hth1t",
+                          "fill": "$color-text-secondary",
+                          "content": "Pedido",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "0XsdH",
+                      "name": "hth2",
+                      "width": 160,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "SJxHo",
+                          "name": "hth2t",
+                          "fill": "$color-text-secondary",
+                          "content": "Fecha",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4FBhF",
+                      "name": "hth3",
+                      "width": "fill_container",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "XJksY",
+                          "name": "hth3t",
+                          "fill": "$color-text-secondary",
+                          "content": "Productos",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "6Z8uI",
+                      "name": "hth4",
+                      "width": 120,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "GyWTW",
+                          "name": "hth4t",
+                          "fill": "$color-text-secondary",
+                          "content": "Total",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "b4sQs",
+                      "name": "hth5",
+                      "width": 100,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Ok7qT",
+                          "name": "hth5t",
+                          "fill": "$color-text-secondary",
+                          "content": "Estado",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TyiHO",
+                  "name": "htr1",
+                  "width": "fill_container",
+                  "stroke": {
+                    "thickness": {
+                      "top": 1
+                    },
+                    "fill": "$color-border"
+                  },
+                  "padding": [
+                    14,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "PXhDB",
+                      "name": "htr1c1",
+                      "width": 120,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "35xxX",
+                          "name": "htr1c1t",
+                          "fill": "$color-accent",
+                          "content": "#SSA-001",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PS0Mx",
+                      "name": "htr1c2",
+                      "width": 160,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "3LYBg",
+                          "name": "htr1c2t",
+                          "fill": "$color-text-secondary",
+                          "content": "24 Mar 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "64NvL",
+                      "name": "htr1c3",
+                      "width": "fill_container",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "nseI8",
+                          "name": "htr1c3t",
+                          "fill": "$color-text-primary",
+                          "content": "Samsung Galaxy S26 Ultra, AirPods Pro 3 x2",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "h01P4",
+                      "name": "htr1c4",
+                      "width": 120,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "7V4jh",
+                          "name": "htr1c4t",
+                          "fill": "$color-text-primary",
+                          "content": "US$ 1,748.00",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ExwwO",
+                      "name": "htr1c5",
+                      "width": 100,
+                      "children": [
+                        {
+                          "id": "cS5Mj",
+                          "type": "ref",
+                          "ref": "I59Lf",
+                          "name": "htr1badge",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "descendants": {
+                            "8V2DZ": {
+                              "x": 10,
+                              "y": 4
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "H1rmk",
+                  "name": "htr2",
+                  "width": "fill_container",
+                  "stroke": {
+                    "thickness": {
+                      "top": 1
+                    },
+                    "fill": "$color-border"
+                  },
+                  "padding": [
+                    14,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OStk8",
+                      "name": "htr2c1",
+                      "width": 120,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "tGGA6",
+                          "name": "htr2c1t",
+                          "fill": "$color-accent",
+                          "content": "#SSA-003",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "TMPCw",
+                      "name": "htr2c2",
+                      "width": 160,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "aUwWN",
+                          "name": "htr2c2t",
+                          "fill": "$color-text-secondary",
+                          "content": "15 Mar 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "8bRSx",
+                      "name": "htr2c3",
+                      "width": "fill_container",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "1QZ7e",
+                          "name": "htr2c3t",
+                          "fill": "$color-text-primary",
+                          "content": "Dior Sauvage EDT 100ml",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Gj3em",
+                      "name": "htr2c4",
+                      "width": 120,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "5iA1n",
+                          "name": "htr2c4t",
+                          "fill": "$color-text-primary",
+                          "content": "US$ 120.00",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AUGti",
+                      "name": "htr2c5",
+                      "width": 100,
+                      "children": [
+                        {
+                          "id": "sWFao",
+                          "type": "ref",
+                          "ref": "QA0oT",
+                          "name": "htr2badge",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "descendants": {
+                            "Iemck": {
+                              "content": "Entregado",
+                              "x": 10,
+                              "y": 4
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "XiiLX",
+          "type": "ref",
+          "ref": "O1MbO",
+          "width": "fill_container",
+          "name": "histFooter",
+          "y": 323,
+          "height": "fit_content",
+          "descendants": {
+            "Btczg": {
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 40
+            },
+            "L08VE": {
+              "height": "fit_content"
+            },
+            "aCIh5": {
+              "width": "fill_container",
+              "y": 30
+            },
+            "Yg6rn": {
+              "x": 720.5,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "eiukh": {
+              "y": 25
+            },
+            "YDd0p": {
+              "y": 49
+            },
+            "Fp9Hh": {
+              "x": 1197,
+              "width": "fit_content",
+              "height": "fit_content"
+            },
+            "OoDgV": {
+              "y": 25
+            },
+            "XCBO8": {
+              "y": 49
+            },
+            "qDiVp": {
+              "width": "fill_container",
+              "height": "fit_content",
+              "x": 24,
+              "y": 129
+            },
+            "Rwyxa": {
+              "x": 537.5,
+              "y": 16
+            }
+          }
         }
       ]
     }
