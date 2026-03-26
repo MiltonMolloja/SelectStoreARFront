@@ -7,3 +7,4 @@ export { ApiService } from './api.service';
 export { ToastService } from './toast.service';
 export { OrderService } from './order.service';
 export { AuthService } from './auth.service';
+export { JsonLdService } from './jsonld.service';
