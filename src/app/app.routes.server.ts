@@ -1,8 +1,10 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
 export const serverRoutes: ServerRoute[] = [
+  // Público — SSR landing (Prerender cuando haya API disponible)
+  { path: '', renderMode: RenderMode.Client },
+
   // Público — SSR para SEO
-  { path: '', renderMode: RenderMode.Prerender },
   { path: 'catalogo', renderMode: RenderMode.Server },
   { path: 'categoria/:slug', renderMode: RenderMode.Server },
   { path: 'producto/:slug', renderMode: RenderMode.Server },
