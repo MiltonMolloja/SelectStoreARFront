@@ -98,7 +98,10 @@
               "buildTarget": "selectstorear:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          }
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"
@@ -137,6 +140,7 @@
   "cli": {
     "schematicCollections": [
       "angular-eslint"
-    ]
+    ],
+    "analytics": "1dc05bd2-dedb-4292-8164-ff75cac76e27"
   }
 }

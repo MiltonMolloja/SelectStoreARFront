@@ -15,9 +15,10 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <!-- Hero -->
-    <section class="bg-[var(--color-surface)]">
-      <div class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
-        <div class="flex-1 text-center md:text-left">
+    <section class="bg-gradient-to-br from-blue-50 via-[var(--color-surface)] to-[var(--color-bg)]
+                     dark:from-slate-900 dark:via-[var(--color-surface)] dark:to-[var(--color-bg)]">
+      <div class="container mx-auto px-4 py-20 md:py-28 flex flex-col md:flex-row items-center justify-between gap-12 min-h-[560px]">
+        <div class="flex-1 text-center md:text-left max-w-xl">
           <p class="text-sm text-[var(--color-accent)] font-medium mb-3 tracking-wide uppercase">
             Productos importados bajo pedido
           </p>
@@ -42,10 +43,11 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
             </a>
           </div>
         </div>
-        <div class="flex-1 max-w-md">
-          <div class="aspect-square rounded-2xl bg-[var(--color-accent)] p-8 flex items-center justify-center">
-            <span class="text-8xl">📱</span>
-          </div>
+        <div class="flex-1 max-w-[500px]">
+          <img src="https://images.unsplash.com/photo-1595392030002-dd3bcc0ca05a?w=1080&q=80"
+               alt="Productos importados premium — celulares, consolas, tecnología"
+               class="w-full aspect-[5/4] object-cover rounded-2xl shadow-lg"
+               loading="eager" />
         </div>
       </div>
     </section>
