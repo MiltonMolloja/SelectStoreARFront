@@ -1,5 +1,5 @@
 {
-  "version": "2.9",
+  "version": "2.10",
   "children": [
     {
       "type": "frame",
@@ -12063,6 +12063,253 @@
               "y": 16
             }
           }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "W4aN5",
+      "x": 3630,
+      "y": 0,
+      "name": "Ad - iPhone 17 Pro Max",
+      "width": 1080,
+      "height": 1080,
+      "fill": {
+        "type": "gradient",
+        "gradientType": "linear",
+        "enabled": true,
+        "rotation": 180,
+        "size": {
+          "height": 1
+        },
+        "colors": [
+          {
+            "color": "#0A0A0F",
+            "position": 0
+          },
+          {
+            "color": "#0F1628",
+            "position": 0.5
+          },
+          {
+            "color": "#1A1A2E",
+            "position": 1
+          }
+        ]
+      },
+      "layout": "vertical",
+      "padding": [
+        60,
+        60,
+        40,
+        60
+      ],
+      "justifyContent": "space_between",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Hq66C",
+          "name": "topSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 8,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "P2aiR",
+              "name": "titleText",
+              "fill": "#FFFFFF",
+              "content": "iPhone 17 Pro Max",
+              "fontFamily": "Inter",
+              "fontSize": 52,
+              "fontWeight": "bold",
+              "letterSpacing": -1
+            },
+            {
+              "type": "text",
+              "id": "YQvx2",
+              "name": "subtitleText",
+              "fill": "#8B8FA3",
+              "content": "256GB — Nuevo Sellado",
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "Yo4tP",
+              "name": "colorText",
+              "fill": "#4A7DFF",
+              "content": "Color Azul",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "eq8qk",
+          "name": "Phone Image",
+          "width": 744,
+          "height": 556,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "./images/generated-1775071190715.png",
+            "mode": "fill"
+          },
+          "cornerRadius": 24
+        },
+        {
+          "type": "frame",
+          "id": "NbeNT",
+          "name": "bottomSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "naDII",
+              "name": "priceRow",
+              "width": "fill_container",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "5runH",
+                  "name": "pesoPrice",
+                  "fill": "#FFFFFF",
+                  "content": "$ 2.090.000",
+                  "fontFamily": "Inter",
+                  "fontSize": 40,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "id": "8PsBq",
+                  "name": "usdPrice",
+                  "fill": "#8B8FA3",
+                  "content": "USD 1.470",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "LrTVB",
+              "name": "guaranteeBadge",
+              "fill": "#1A2744",
+              "cornerRadius": 100,
+              "gap": 8,
+              "padding": [
+                8,
+                20
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "6qNQX",
+                  "name": "shieldIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "shield-check",
+                  "iconFontFamily": "lucide",
+                  "fill": "#4A7DFF"
+                },
+                {
+                  "type": "text",
+                  "id": "LKtjJ",
+                  "name": "guaranteeText",
+                  "fill": "#FFFFFF",
+                  "content": "Garantía oficial Apple — 12 meses",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mvoSy",
+              "name": "infoRow",
+              "width": "fill_container",
+              "gap": 24,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "fIkgO",
+                  "name": "locationIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "map-pin",
+                  "iconFontFamily": "lucide",
+                  "fill": "#8B8FA3"
+                },
+                {
+                  "type": "text",
+                  "id": "FYTsL",
+                  "name": "locationText",
+                  "fill": "#8B8FA3",
+                  "content": "Dorrego 14, Jujuy",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "ZWISB",
+                  "name": "deliveryIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "truck",
+                  "iconFontFamily": "lucide",
+                  "fill": "#8B8FA3"
+                },
+                {
+                  "type": "text",
+                  "id": "H04BA",
+                  "name": "deliveryText",
+                  "fill": "#8B8FA3",
+                  "content": "Entrega a domicilio",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "GusZX",
+                  "name": "whatsappIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "phone",
+                  "iconFontFamily": "lucide",
+                  "fill": "#8B8FA3"
+                },
+                {
+                  "type": "text",
+                  "id": "d7bYT",
+                  "name": "whatsappText",
+                  "fill": "#8B8FA3",
+                  "content": "+54 388 457-6668",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

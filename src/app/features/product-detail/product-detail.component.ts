@@ -246,7 +246,9 @@ export class ProductDetailComponent implements OnInit {
     this.api.getProductBySlug(slug).subscribe({
       next: (product) => {
         this.product.set(product);
-        this.prefs.setExchangeRate(product.exchangeRate);
+        if (product.exchangeRate > 0) {
+          this.prefs.setExchangeRate(product.exchangeRate);
+        }
         this.loading.set(false);
 
         // SEO

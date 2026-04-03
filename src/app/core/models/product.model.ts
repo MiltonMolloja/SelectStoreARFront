@@ -7,6 +7,9 @@ export interface ProductListItem {
   basePriceUsd: number;
   finalPriceUsd: number;
   finalPriceArs: number;
+  // Backend sends flat fields, we normalize in service
+  categoryName?: string;
+  categorySlug?: string;
   category: {
     name: string;
     slug: string;
@@ -24,7 +27,11 @@ export interface ProductDetail {
   basePriceUsd: number;
   finalPriceUsd: number;
   finalPriceArs: number;
-  markupPercentage: number;
+  markupPercentage: number | null;
+  // Backend sends flat category fields
+  categoryId: string;
+  categoryName: string;
+  categorySlug: string;
   category: {
     id: string;
     name: string;
@@ -36,10 +43,17 @@ export interface ProductDetail {
   relatedProducts: ProductListItem[];
   exchangeRate: number;
   seo: ProductSeo;
+  status: string;
 }
 
 export interface ProductImage {
   id: string;
+  // Backend field names
+  url?: string;
+  thumbnailUrl?: string;
+  mediumUrl?: string;
+  sortOrder?: number;
+  // Normalized field names (used in components)
   original: string;
   medium: string;
   thumbnail: string;
@@ -53,5 +67,5 @@ export interface ProductSeo {
   ogImage: string;
 }
 
-export type ProductStatus = 'draft' | 'active' | 'inactive' | 'deleted';
+export type ProductStatus = 'draft' | 'active' | 'inactive' | 'deleted' | 'Active' | 'Draft' | 'Inactive';
 export type ProductAvailability = 'available' | 'unavailable' | 'on_order';
