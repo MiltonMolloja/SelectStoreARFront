@@ -1,29 +1,31 @@
 import { Component, ChangeDetectionStrategy, inject, input, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { LucideMessageCircle, LucideShare2, LucideLink } from '@lucide/angular';
 import { AnalyticsService } from '../../../core/services/analytics.service';
 import { ToastService } from '../../../core/services/toast.service';
 
 @Component({
   selector: 'app-share-buttons',
   standalone: true,
+  imports: [LucideMessageCircle, LucideShare2, LucideLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="flex items-center gap-2">
-      <span class="text-sm text-[var(--color-text-secondary)]">Compartir:</span>
+    <div class="flex items-center gap-3">
+      <span class="text-[13px] font-medium text-[var(--color-text-secondary)]">Compartir:</span>
       <button (click)="shareWhatsApp()" title="Compartir por WhatsApp"
-              class="p-2 rounded-lg hover:bg-green-50 transition-colors text-lg"
+              class="w-9 h-9 rounded-lg bg-green-100 flex items-center justify-center hover:opacity-80 transition-opacity"
               aria-label="Compartir por WhatsApp">
-        💬
+        <svg lucideMessageCircle [size]="16" class="text-[#25D366]"></svg>
       </button>
       <button (click)="shareFacebook()" title="Compartir en Facebook"
-              class="p-2 rounded-lg hover:bg-blue-50 transition-colors text-lg"
+              class="w-9 h-9 rounded-lg bg-[var(--color-accent-light)] flex items-center justify-center hover:opacity-80 transition-opacity"
               aria-label="Compartir en Facebook">
-        📘
+        <svg lucideShare2 [size]="16" class="text-[var(--color-accent)]"></svg>
       </button>
       <button (click)="copyLink()" title="Copiar enlace"
-              class="p-2 rounded-lg hover:bg-[var(--color-surface-hover)] transition-colors text-lg"
+              class="w-9 h-9 rounded-lg border border-[var(--color-border)] flex items-center justify-center hover:opacity-80 transition-opacity"
               aria-label="Copiar enlace">
-        🔗
+        <svg lucideLink [size]="16" class="text-[var(--color-text-secondary)]"></svg>
       </button>
     </div>
   `,

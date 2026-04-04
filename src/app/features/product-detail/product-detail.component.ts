@@ -12,22 +12,22 @@ import { ProductDetail } from '../../core/models';
 import { ImageGalleryComponent } from '../../shared/components/image-gallery/image-gallery.component';
 import { ShareButtonsComponent } from '../../shared/components/share-buttons/share-buttons.component';
 import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
+import { LucideMessageCircle } from '@lucide/angular';
 
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [RouterLink, KeyValuePipe, ImageGalleryComponent, ShareButtonsComponent, ProductCardComponent],
+  imports: [RouterLink, KeyValuePipe, LucideMessageCircle, ImageGalleryComponent, ShareButtonsComponent, ProductCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (loading()) {
-      <!-- Skeleton -->
-      <div class="container mx-auto px-4 py-8 animate-pulse">
+      <div style="padding: 24px 80px" class="animate-pulse">
         <div class="h-4 bg-[var(--color-divider)] rounded w-64 mb-6"></div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="aspect-[4/3] bg-[var(--color-divider)] rounded-xl"></div>
-          <div class="space-y-4">
-            <div class="h-3 bg-[var(--color-divider)] rounded w-24"></div>
+        <div class="flex gap-12">
+          <div class="w-[560px] h-[420px] bg-[var(--color-divider)] rounded-xl shrink-0"></div>
+          <div class="flex-1 space-y-4">
+            <div class="h-4 bg-[var(--color-divider)] rounded w-24"></div>
             <div class="h-8 bg-[var(--color-divider)] rounded w-3/4"></div>
             <div class="h-6 bg-[var(--color-divider)] rounded w-40"></div>
             <div class="h-12 bg-[var(--color-divider)] rounded w-full"></div>
@@ -35,74 +35,75 @@ import { ProductCardComponent } from '../../shared/components/product-card/produ
         </div>
       </div>
     } @else if (product()) {
-      <div class="container mx-auto px-4 py-8">
+      <div style="padding: 24px 80px">
         <!-- Breadcrumb -->
-        <nav class="text-sm text-[var(--color-text-secondary)] mb-6">
+        <nav class="text-[13px] text-[var(--color-text-secondary)] mb-6 flex items-center gap-2">
           <a routerLink="/" class="hover:text-[var(--color-accent)]">Home</a>
-          <span class="mx-2">›</span>
-          <a routerLink="/catalogo" class="hover:text-[var(--color-accent)]">Catálogo</a>
-          <span class="mx-2">›</span>
+          <span>›</span>
+          <a routerLink="/catalogo" class="hover:text-[var(--color-accent)]">Catalogo</a>
+          <span>›</span>
           <a [routerLink]="['/categoria', product()!.category.slug]" class="hover:text-[var(--color-accent)]">
             {{ product()!.category.name }}
           </a>
-          <span class="mx-2">›</span>
-          <span class="text-[var(--color-text-primary)]">{{ product()!.name }}</span>
+          <span>›</span>
+          <span class="text-[var(--color-text-primary)] font-medium">{{ product()!.name }}</span>
         </nav>
 
         <!-- Product Main -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="flex flex-col md:flex-row gap-12 mb-10">
           <!-- Gallery -->
-          <app-image-gallery [images]="product()!.images" />
+          <div class="w-full md:w-[560px] shrink-0">
+            <app-image-gallery [images]="product()!.images" />
+          </div>
 
           <!-- Info -->
-          <div>
+          <div class="flex-1 flex flex-col gap-5">
             <a [routerLink]="['/categoria', product()!.category.slug]"
-               class="text-sm text-[var(--color-accent)] font-medium hover:underline">
-              {{ product()!.category.name }}
+               class="text-[14px] text-[var(--color-accent)] font-medium hover:underline">
+              {{ product()!.brand }}
             </a>
 
-            <h1 class="text-2xl md:text-3xl font-bold mt-2 mb-4"
-                style="font-family: 'Cormorant Garamond', serif">
+            <h1 class="text-[32px] font-bold leading-tight">
               {{ product()!.name }}
             </h1>
 
             <!-- Price -->
-            <div class="mb-4">
-              <p class="text-2xl font-bold text-[var(--color-accent)]">
-                {{ prefs.formatPrice()(product()!.finalPriceUsd) }}
+            <div>
+              <p class="text-[28px] font-extrabold text-[var(--color-accent)]">
+                US$ {{ product()!.finalPriceUsd.toFixed(2) }}
               </p>
-              @if (prefs.currency() === 'ARS') {
-                <p class="text-sm text-[var(--color-text-secondary)]">
-                  US$ {{ product()!.finalPriceUsd.toFixed(2) }} · Cotización: $ {{ product()!.exchangeRate.toLocaleString('es-AR') }}
-                </p>
-              }
+              <p class="text-[14px] text-[var(--color-text-secondary)] mt-1">
+                {{ '$' }} {{ (product()!.finalPriceUsd * (product()!.exchangeRate || 1250)).toLocaleString('es-AR') }}
+                (cotización: {{ '$' }}{{ (product()!.exchangeRate || 1250).toLocaleString('es-AR') }})
+              </p>
             </div>
 
             <!-- Availability -->
-            <div class="flex items-center gap-2 mb-6 text-sm">
-              <span class="w-2 h-2 rounded-full"
-                    [class.bg-[var(--color-success)]]="product()!.availability === 'available'"
-                    [class.bg-[var(--color-warning)]]="product()!.availability === 'on_order'"
-                    [class.bg-[var(--color-error)]]="product()!.availability === 'unavailable'">
-              </span>
-              <span class="text-[var(--color-text-secondary)]">
-                {{ getAvailabilityLabel(product()!.availability) }}
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[var(--color-success)]"></span>
+              <span class="text-[14px] text-[var(--color-text-secondary)]">
+                Bajo pedido · Entrega en ~1 semana
               </span>
             </div>
 
+            <div class="h-px bg-[var(--color-border)]"></div>
+
             <!-- Actions -->
-            <div class="space-y-3 mb-6">
+            <div class="flex flex-col gap-3">
               <button (click)="onAddToCart()"
-                      class="w-full py-3.5 bg-[var(--color-accent)] text-white rounded-lg font-medium
-                             hover:opacity-90 transition-opacity text-sm">
+                      class="w-full py-3 bg-[var(--color-accent)] text-white rounded-lg font-semibold
+                             hover:opacity-90 transition-opacity text-[16px]">
                 Agregar al carrito
               </button>
               <a [href]="getWhatsAppLink()" target="_blank" rel="noopener"
-                 class="block w-full py-3.5 bg-green-500 text-white rounded-lg font-medium
-                        hover:opacity-90 transition-opacity text-sm text-center">
-                💬 Consultar por WhatsApp
+                 class="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] text-white rounded-lg font-semibold
+                        hover:opacity-90 transition-opacity text-[14px]">
+                <svg lucideMessageCircle [size]="18"></svg>
+                Consultar por WhatsApp
               </a>
             </div>
+
+            <div class="h-px bg-[var(--color-border)]"></div>
 
             <!-- Share -->
             <app-share-buttons
@@ -114,29 +115,25 @@ import { ProductCardComponent } from '../../shared/components/product-card/produ
 
         <!-- Description -->
         @if (product()!.description) {
-          <section class="mb-10">
-            <h2 class="text-xl font-bold mb-4" style="font-family: 'Cormorant Garamond', serif">
-              Descripción
-            </h2>
-            <div class="text-[var(--color-text-secondary)] leading-relaxed whitespace-pre-line max-w-3xl">
+          <section class="mb-10 pt-8 border-t border-[var(--color-border)]">
+            <h2 class="text-[20px] font-bold mb-4">Descripcion</h2>
+            <p class="text-[14px] text-[var(--color-text-secondary)] leading-[1.7] max-w-3xl">
               {{ product()!.description }}
-            </div>
+            </p>
           </section>
         }
 
         <!-- Specifications -->
         @if (hasSpecs()) {
           <section class="mb-10">
-            <h2 class="text-xl font-bold mb-4" style="font-family: 'Cormorant Garamond', serif">
-              Especificaciones
-            </h2>
+            <h2 class="text-[20px] font-bold mb-4">Especificaciones</h2>
             <div class="bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)] overflow-hidden max-w-2xl">
               @for (spec of product()!.specifications | keyvalue; track spec.key) {
                 <div class="flex border-b border-[var(--color-divider)] last:border-b-0">
-                  <div class="w-1/3 px-4 py-3 text-sm font-medium bg-[var(--color-surface-hover)]">
+                  <div class="w-1/3 px-4 py-3 text-[13px] font-medium bg-[var(--color-surface-hover)]">
                     {{ spec.key }}
                   </div>
-                  <div class="w-2/3 px-4 py-3 text-sm text-[var(--color-text-secondary)]">
+                  <div class="w-2/3 px-4 py-3 text-[13px] text-[var(--color-text-secondary)]">
                     {{ spec.value }}
                   </div>
                 </div>
@@ -149,10 +146,8 @@ import { ProductCardComponent } from '../../shared/components/product-card/produ
         @defer (on viewport) {
           @if (product()!.relatedProducts.length) {
             <section class="mb-10">
-              <h2 class="text-xl font-bold mb-6" style="font-family: 'Cormorant Garamond', serif">
-                Productos Relacionados
-              </h2>
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <h2 class="text-[20px] font-bold mb-6">Productos Relacionados</h2>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
                 @for (related of product()!.relatedProducts; track related.id) {
                   <app-product-card [product]="related" />
                 }
@@ -164,8 +159,7 @@ import { ProductCardComponent } from '../../shared/components/product-card/produ
         }
       </div>
     } @else {
-      <!-- Not found -->
-      <div class="container mx-auto px-4 py-16 text-center">
+      <div class="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
         <p class="text-4xl mb-4">😕</p>
         <h2 class="text-2xl font-bold mb-2">Producto no encontrado</h2>
         <p class="text-[var(--color-text-secondary)] mb-6">El producto que buscás no existe o fue removido</p>
