@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, inject, OnInit, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, OnInit, signal, viewChild, ElementRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LucideSearch, LucideMessageCircle, LucideCreditCard, LucideTimer, LucidePackage, LucideShield, LucideMapPin } from '@lucide/angular';
+import { LucideSearch, LucideMessageCircle, LucideCreditCard, LucideTimer, LucidePackage, LucideShield, LucideMapPin, LucideChevronLeft, LucideChevronRight } from '@lucide/angular';
 import { ApiService } from '../../core/services/api.service';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { SeoService } from '../../core/services/seo.service';
@@ -12,7 +12,7 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [RouterLink, LucideSearch, LucideMessageCircle, LucideCreditCard, LucideTimer, LucidePackage, LucideShield, LucideMapPin, ProductCardComponent, SkeletonCardComponent],
+  imports: [RouterLink, LucideSearch, LucideMessageCircle, LucideCreditCard, LucideTimer, LucidePackage, LucideShield, LucideMapPin, LucideChevronLeft, LucideChevronRight, ProductCardComponent, SkeletonCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <!-- Hero -->
@@ -105,33 +105,49 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
     </section>
 
     <!-- Categorías -->
-    @defer (on viewport) {
+     @defer (on viewport) {
       @if (data()?.categories?.length) {
-         <section class="bg-[var(--color-surface)]" style="padding: 60px 80px">
-        <div>
-          <h2 class="text-[32px] font-bold mb-2" style="font-family: Inter, sans-serif">
-            Categorias
-          </h2>
-          <p class="text-[16px] text-[var(--color-text-secondary)] mb-8">
-            Explorá nuestras categorías de productos importados
-          </p>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <section class="bg-[var(--color-surface)]" style="padding: 60px 80px">
+          <div class="flex items-end justify-between mb-8">
+            <div>
+              <h2 class="text-[32px] font-bold mb-2">Categorias</h2>
+              <p class="text-[16px] text-[var(--color-text-secondary)]">
+                Explorá nuestras categorías de productos importados
+              </p>
+            </div>
+            <div class="flex gap-2">
+              <button (click)="scrollCategories('left')"
+                      class="w-10 h-10 rounded-full border border-[var(--color-border)] flex items-center justify-center
+                             hover:bg-[var(--color-surface-hover)] transition-colors"
+                      aria-label="Anterior">
+                <svg lucideChevronLeft [size]="20" class="text-[var(--color-text-secondary)]"></svg>
+              </button>
+              <button (click)="scrollCategories('right')"
+                      class="w-10 h-10 rounded-full border border-[var(--color-border)] flex items-center justify-center
+                             hover:bg-[var(--color-surface-hover)] transition-colors"
+                      aria-label="Siguiente">
+                <svg lucideChevronRight [size]="20" class="text-[var(--color-text-secondary)]"></svg>
+              </button>
+            </div>
+          </div>
+          <div #categoryCarousel
+               class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2"
+               style="scrollbar-width: none; -ms-overflow-style: none">
             @for (cat of data()!.categories; track cat.id) {
               <a [routerLink]="['/categoria', cat.slug]"
-                 class="group relative aspect-[3/2] rounded-xl overflow-hidden bg-[var(--color-divider)]">
+                 class="group relative shrink-0 w-[280px] aspect-[3/2] rounded-xl overflow-hidden bg-[var(--color-divider)] snap-start">
                 @if (cat.imageUrl) {
                   <img [src]="cat.imageUrl" [alt]="cat.name" loading="lazy"
                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 }
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-4">
-                  <p class="text-white font-semibold">{{ cat.name }}</p>
-                  <p class="text-white/70 text-xs">{{ cat.productCount }} productos</p>
+                  <p class="text-white font-semibold text-[15px]">{{ cat.name }}</p>
+                  <p class="text-white/70 text-[12px]">{{ cat.productCount }} productos</p>
                 </div>
               </a>
             }
           </div>
-        </div>
         </section>
       }
     } @placeholder {
@@ -219,6 +235,7 @@ export class LandingComponent implements OnInit {
 
   protected readonly data = signal<LandingData | null>(null);
   protected readonly loading = signal(true);
+  protected readonly categoryCarousel = viewChild<ElementRef>('categoryCarousel');
 
   protected readonly steps = [
     { number: 1, lucide: 'search', title: '1. Elegí', description: 'Navegá el catálogo y encontrá lo que buscás' },
@@ -235,6 +252,13 @@ export class LandingComponent implements OnInit {
     );
     this.jsonLd.setOrganization();
     this.loadLanding();
+  }
+
+  protected scrollCategories(direction: 'left' | 'right'): void {
+    const el = this.categoryCarousel()?.nativeElement;
+    if (!el) return;
+    const scrollAmount = 300;
+    el.scrollBy({ left: direction === 'right' ? scrollAmount : -scrollAmount, behavior: 'smooth' });
   }
 
   private loadLanding(): void {
