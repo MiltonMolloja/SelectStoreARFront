@@ -78,11 +78,7 @@ body {
 
 /* ── Typography ────────────────────────────────────────────────────────────── */
 
-h1,
-h2,
-h3 {
-  font-family: 'Cormorant Garamond', 'Georgia', serif;
-}
+/* Cormorant Garamond only used explicitly via inline style where needed (logo) */
 
 /* ── Scrollbar ─────────────────────────────────────────────────────────────── */
 
