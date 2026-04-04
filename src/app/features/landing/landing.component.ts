@@ -17,8 +17,8 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
   template: `
     <!-- Hero -->
     <section style="background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%)">
-      <div class="mx-auto flex flex-col md:flex-row items-center justify-between h-[560px]"
-           style="padding: 0 80px; max-width: 1440px">
+      <div class="mx-auto flex flex-col md:flex-row items-center justify-between min-h-[560px] px-5 md:px-20"
+           style="max-width: 1440px">
         <div class="max-w-[560px] flex flex-col gap-6">
           <span class="inline-block w-fit px-3.5 py-1.5 rounded-full bg-[var(--color-accent-light)] text-[var(--color-accent)] text-[13px] font-semibold">
             Productos importados bajo pedido
@@ -30,15 +30,15 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
             Celulares, consolas, perfumes y tecnología de las mejores marcas del mundo.
             Elegís, coordinás y en ~1 semana lo tenés en tus manos.
           </p>
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-4 flex-wrap">
             <a routerLink="/catalogo"
                class="px-6 py-3 bg-[var(--color-accent)] text-white rounded-lg text-sm font-semibold
-                      hover:opacity-90 transition-opacity">
+                      hover:opacity-90 transition-opacity whitespace-nowrap">
               Ver Catálogo
             </a>
             <a href="https://wa.me/5493881234567" target="_blank" rel="noopener"
                class="flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-lg text-sm font-semibold
-                      hover:opacity-90 transition-opacity">
+                      hover:opacity-90 transition-opacity whitespace-nowrap">
               💬 Consultar por WhatsApp
             </a>
           </div>
