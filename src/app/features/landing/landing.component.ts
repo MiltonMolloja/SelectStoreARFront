@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, inject, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LucideSearch, LucideMessageCircle, LucideCreditCard, LucideTimer, LucidePackage, LucideShield, LucideCheckCircle, LucideRocket } from '@lucide/angular';
 import { ApiService } from '../../core/services/api.service';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { SeoService } from '../../core/services/seo.service';
@@ -11,7 +12,7 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [RouterLink, ProductCardComponent, SkeletonCardComponent],
+  imports: [RouterLink, LucideSearch, LucideMessageCircle, LucideCreditCard, LucideTimer, LucidePackage, LucideShield, LucideCheckCircle, LucideRocket, ProductCardComponent, SkeletonCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <!-- Hero -->
@@ -52,25 +53,53 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
     </section>
 
     <!-- Cómo funciona -->
-    <section class="py-16 md:py-20">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-4" style="font-family: 'Cormorant Garamond', serif">
-          Cómo funciona
-        </h2>
-        <p class="text-center text-[var(--color-text-secondary)] mb-12 max-w-xl mx-auto">
-          En 5 simples pasos tenés tu producto importado en tus manos
-        </p>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4">
-          @for (step of steps; track step.number) {
-            <div class="text-center">
-              <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-[var(--color-accent-light)]
-                          flex items-center justify-center text-2xl">
-                {{ step.icon }}
-              </div>
-              <p class="font-semibold text-sm mb-1">{{ step.title }}</p>
-              <p class="text-xs text-[var(--color-text-secondary)]">{{ step.description }}</p>
+    <section style="padding: 60px 80px">
+      <div class="flex flex-col items-center gap-10">
+        <div class="text-center">
+          <h2 class="text-[32px] font-bold mb-2" style="font-family: Inter, sans-serif">Como funciona</h2>
+          <p class="text-[16px] text-[var(--color-text-secondary)]">En 5 simples pasos tenes tu producto importado</p>
+        </div>
+        <div class="flex justify-center gap-6 w-full flex-wrap">
+          <!-- Step 1 -->
+          <div class="flex flex-col items-center gap-3 w-[220px]">
+            <div class="w-14 h-14 rounded-full bg-[var(--color-accent-light)] flex items-center justify-center">
+              <svg lucideSearch class="text-[var(--color-accent)]" [size]="24"></svg>
             </div>
-          }
+            <p class="text-[16px] font-semibold">1. Elegí</p>
+            <p class="text-[13px] text-[var(--color-text-secondary)] leading-[1.5] text-center">Navegá el catálogo y encontrá lo que buscás</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center gap-3 w-[220px]">
+            <div class="w-14 h-14 rounded-full bg-[var(--color-accent-light)] flex items-center justify-center">
+              <svg lucideMessageCircle class="text-[var(--color-accent)]" [size]="24"></svg>
+            </div>
+            <p class="text-[16px] font-semibold">2. Contactá</p>
+            <p class="text-[13px] text-[var(--color-text-secondary)] leading-[1.5] text-center">Escribinos por WhatsApp para coordinar</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center gap-3 w-[220px]">
+            <div class="w-14 h-14 rounded-full bg-[var(--color-accent-light)] flex items-center justify-center">
+              <svg lucideCreditCard class="text-[var(--color-accent)]" [size]="24"></svg>
+            </div>
+            <p class="text-[16px] font-semibold">3. Señá</p>
+            <p class="text-[13px] text-[var(--color-text-secondary)] leading-[1.5] text-center">Abonás una seña para confirmar tu pedido</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="flex flex-col items-center gap-3 w-[220px]">
+            <div class="w-14 h-14 rounded-full bg-[var(--color-accent-light)] flex items-center justify-center">
+              <svg lucideTimer class="text-[var(--color-accent)]" [size]="24"></svg>
+            </div>
+            <p class="text-[16px] font-semibold">4. Esperá</p>
+            <p class="text-[13px] text-[var(--color-text-secondary)] leading-[1.5] text-center">Tu producto llega en aproximadamente 1 semana</p>
+          </div>
+          <!-- Step 5 -->
+          <div class="flex flex-col items-center gap-3 w-[220px]">
+            <div class="w-14 h-14 rounded-full bg-[var(--color-accent-light)] flex items-center justify-center">
+              <svg lucidePackage class="text-[var(--color-accent)]" [size]="24"></svg>
+            </div>
+            <p class="text-[16px] font-semibold">5. Recibí</p>
+            <p class="text-[13px] text-[var(--color-text-secondary)] leading-[1.5] text-center">Retirás tu producto o te lo enviamos</p>
+          </div>
         </div>
       </div>
     </section>
@@ -174,11 +203,11 @@ export class LandingComponent implements OnInit {
   protected readonly loading = signal(true);
 
   protected readonly steps = [
-    { number: 1, icon: '🔍', title: 'Elegí', description: 'Navegá el catálogo' },
-    { number: 2, icon: '💬', title: 'Contactá', description: 'Escribinos por WhatsApp' },
-    { number: 3, icon: '💰', title: 'Señá', description: 'Reservá con una seña' },
-    { number: 4, icon: '📦', title: 'Esperá', description: '7-15 días hábiles' },
-    { number: 5, icon: '🎉', title: 'Recibí', description: 'Tu producto en mano' },
+    { number: 1, lucide: 'search', title: '1. Elegí', description: 'Navegá el catálogo y encontrá lo que buscás' },
+    { number: 2, lucide: 'message-circle', title: '2. Contactá', description: 'Escribinos por WhatsApp para coordinar' },
+    { number: 3, lucide: 'credit-card', title: '3. Señá', description: 'Abonás una seña para confirmar tu pedido' },
+    { number: 4, lucide: 'timer', title: '4. Esperá', description: 'Tu producto llega en aproximadamente 1 semana' },
+    { number: 5, lucide: 'package', title: '5. Recibí', description: 'Retirás tu producto o te lo enviamos' },
   ];
 
   protected readonly trustItems = [
