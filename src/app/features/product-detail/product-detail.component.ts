@@ -58,7 +58,7 @@ import { LucideMessageCircle } from '@lucide/angular';
 
           <!-- Info -->
           <div class="flex-1 flex flex-col gap-5">
-            <a [routerLink]="['/categoria', product()!.category.slug]"
+            <a [routerLink]="['/catalogo']" [queryParams]="{ brand: product()!.brand }"
                class="text-[14px] text-[var(--color-accent)] font-medium hover:underline">
               {{ product()!.brand }}
             </a>

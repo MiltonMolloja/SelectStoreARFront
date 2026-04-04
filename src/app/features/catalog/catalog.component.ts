@@ -216,6 +216,7 @@ export class CatalogComponent implements OnInit {
 
     const slug = this.route.snapshot.paramMap.get('slug');
     const query = this.route.snapshot.queryParamMap.get('q');
+    const brand = this.route.snapshot.queryParamMap.get('brand');
 
     if (slug) {
       this.activeCategorySlug.set(slug);
@@ -223,6 +224,9 @@ export class CatalogComponent implements OnInit {
     }
     if (query) {
       this.searchQuery.set(query);
+    }
+    if (brand) {
+      this.activeBrand.set(brand);
     }
 
     this.seo.updatePage(
