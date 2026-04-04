@@ -280,11 +280,11 @@ export class CatalogComponent implements OnInit {
 
   private loadCategories(): void {
     this.api.getCategories().subscribe({
-      next: (res) => {
-        this.categories.set(res.categories);
+      next: (categories) => {
+        this.categories.set(categories);
         const slug = this.activeCategorySlug();
         if (slug) {
-          const found = res.categories.find(c => c.slug === slug);
+          const found = categories.find(c => c.slug === slug);
           if (found) this.activeCategory.set(found);
         }
       },

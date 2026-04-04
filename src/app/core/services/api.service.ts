@@ -74,8 +74,8 @@ export class ApiService {
 
   // ── Categories ─────────────────────────────────────────────────────────
 
-  getCategories(): Observable<{ categories: Category[] }> {
-    return this.http.get<{ categories: Category[] }>('/api/categories');
+  getCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>('/api/categories');
   }
 
   // ── Exchange Rate ──────────────────────────────────────────────────────
