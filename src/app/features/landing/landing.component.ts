@@ -15,38 +15,37 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <!-- Hero -->
-    <section class="bg-gradient-to-br from-blue-50 via-[var(--color-surface)] to-[var(--color-bg)]
-                     dark:from-slate-900 dark:via-[var(--color-surface)] dark:to-[var(--color-bg)]">
-      <div class="container mx-auto px-4 py-20 md:py-28 flex flex-col md:flex-row items-center justify-between gap-12 min-h-[560px]">
-        <div class="flex-1 text-center md:text-left max-w-xl">
-          <p class="text-sm text-[var(--color-accent)] font-medium mb-3 tracking-wide uppercase">
+    <section style="background: linear-gradient(135deg, #eff6ff 0%, #fafafa 100%)">
+      <div class="mx-auto flex flex-col md:flex-row items-center justify-between h-[560px]"
+           style="padding: 0 80px; max-width: 1440px">
+        <div class="max-w-[560px] flex flex-col gap-6">
+          <span class="inline-block w-fit px-3.5 py-1.5 rounded-full bg-[var(--color-accent-light)] text-[var(--color-accent)] text-[13px] font-semibold">
             Productos importados bajo pedido
-          </p>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
-              style="font-family: 'Cormorant Garamond', serif">
+          </span>
+          <h1 class="text-[44px] font-extrabold leading-[1.1]" style="font-family: Inter, sans-serif">
             Tu tienda de productos importados premium
           </h1>
-          <p class="text-lg text-[var(--color-text-secondary)] mb-8 max-w-lg">
-            Celulares, consolas, perfumes y tecnología. Todos los productos son bajo pedido —
-            señás y coordinás directamente por WhatsApp.
+          <p class="text-[17px] text-[var(--color-text-secondary)] leading-[1.6]">
+            Celulares, consolas, perfumes y tecnología de las mejores marcas del mundo.
+            Elegís, coordinás y en ~1 semana lo tenés en tus manos.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <div class="flex items-center gap-4">
             <a routerLink="/catalogo"
-               class="px-8 py-3.5 bg-[var(--color-accent)] text-white rounded-lg font-medium
-                      hover:opacity-90 transition-opacity text-center">
+               class="px-6 py-3 bg-[var(--color-accent)] text-white rounded-lg text-sm font-semibold
+                      hover:opacity-90 transition-opacity">
               Ver Catálogo
             </a>
             <a href="https://wa.me/5493881234567" target="_blank" rel="noopener"
-               class="px-8 py-3.5 border border-green-500 text-green-600 rounded-lg font-medium
-                      hover:bg-green-50 transition-colors text-center">
+               class="flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-lg text-sm font-semibold
+                      hover:opacity-90 transition-opacity">
               💬 Consultar por WhatsApp
             </a>
           </div>
         </div>
-        <div class="flex-1 max-w-[500px]">
+        <div class="w-[500px] h-[420px] rounded-[20px] overflow-hidden shrink-0 hidden md:block">
           <img src="https://images.unsplash.com/photo-1595392030002-dd3bcc0ca05a?w=1080&q=80"
                alt="Productos importados premium — celulares, consolas, tecnología"
-               class="w-full aspect-[5/4] object-cover rounded-2xl shadow-lg"
+               class="w-full h-full object-cover"
                loading="eager" />
         </div>
       </div>
