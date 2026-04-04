@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { LucideShoppingCart, LucideTrash2, LucideMessageCircle, LucideMinus, LucidePlus } from '@lucide/angular';
 import { CartService } from '../../core/services/cart.service';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { AnalyticsService } from '../../core/services/analytics.service';
@@ -11,149 +12,135 @@ import { AuthService } from '../../core/services/auth.service';
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule],
+  imports: [RouterLink, ReactiveFormsModule, LucideShoppingCart, LucideTrash2, LucideMessageCircle, LucideMinus, LucidePlus],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (cart.isEmpty()) {
       <!-- Empty State -->
       <div class="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
-        <div class="w-20 h-20 rounded-full bg-[var(--color-accent-light)] flex items-center justify-center text-4xl mb-6">
-          🛒
+        <div class="w-20 h-20 rounded-full bg-[var(--color-accent-light)] flex items-center justify-center mb-6">
+          <svg lucideShoppingCart [size]="36" class="text-[var(--color-accent)]"></svg>
         </div>
-        <h1 class="text-2xl font-bold mb-2" style="font-family: 'Cormorant Garamond', serif">
-          Tu carrito está vacío
-        </h1>
-        <p class="text-[var(--color-text-secondary)] mb-6">
-          Agregá productos desde nuestro catálogo para empezar
+        <h1 class="text-[24px] font-bold mb-2">Tu carrito esta vacio</h1>
+        <p class="text-[15px] text-[var(--color-text-secondary)] mb-6">
+          Agrega productos desde nuestro catalogo para empezar
         </p>
         <a routerLink="/catalogo"
-           class="px-6 py-3 bg-[var(--color-accent)] text-white rounded-lg font-medium hover:opacity-90 transition-opacity">
-          Ver catálogo
+           class="px-6 py-3 bg-[var(--color-accent)] text-white rounded-lg text-[14px] font-semibold hover:opacity-90 transition-opacity">
+          Ver catalogo
         </a>
       </div>
     } @else {
-      <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold mb-8" style="font-family: 'Cormorant Garamond', serif">
+      <div style="padding: 32px 80px">
+        <h1 class="text-[28px] font-bold mb-8">
           Tu Carrito ({{ cart.itemCount() }} {{ cart.itemCount() === 1 ? 'producto' : 'productos' }})
         </h1>
 
-        <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex flex-col lg:flex-row gap-10">
           <!-- Cart Items -->
-          <div class="flex-1 space-y-4">
+          <div class="flex-1 flex flex-col gap-4">
             @for (item of cart.items(); track item.productId) {
-              <div class="flex gap-4 bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)] p-4">
-                <!-- Image -->
+              <div class="flex items-center gap-4 bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)] p-4">
                 <a [routerLink]="['/producto', item.slug]" class="shrink-0">
                   @if (item.imageUrl) {
                     <img [src]="item.imageUrl" [alt]="item.name"
                          class="w-20 h-20 rounded-lg object-cover" />
                   } @else {
-                    <div class="w-20 h-20 rounded-lg bg-[var(--color-divider)] flex items-center justify-center">📷</div>
+                    <div class="w-20 h-20 rounded-lg bg-[var(--color-divider)] flex items-center justify-center text-2xl opacity-30">📷</div>
                   }
                 </a>
-
-                <!-- Info -->
                 <div class="flex-1 min-w-0">
                   <a [routerLink]="['/producto', item.slug]"
-                     class="font-medium text-sm hover:text-[var(--color-accent)] transition-colors line-clamp-2">
+                     class="text-[14px] font-medium hover:text-[var(--color-accent)] transition-colors line-clamp-2">
                     {{ item.name }}
                   </a>
-                  <p class="text-[var(--color-accent)] font-bold mt-1">
-                    {{ prefs.formatPrice()(item.priceUsd) }}
+                  <p class="text-[var(--color-accent)] text-[14px] font-bold mt-1">
+                    US{{ '$' }} {{ item.priceUsd.toFixed(2) }}
                   </p>
                 </div>
-
-                <!-- Quantity -->
-                <div class="flex items-center gap-2 shrink-0">
+                <div class="flex items-center shrink-0 border border-[var(--color-border)] rounded-lg">
                   <button (click)="onQuantityChange(item.productId, item.quantity - 1)"
-                          class="w-8 h-8 rounded-lg border border-[var(--color-border)] flex items-center justify-center
-                                 hover:bg-[var(--color-surface-hover)] transition-colors text-sm"
+                          class="w-9 h-9 flex items-center justify-center hover:bg-[var(--color-surface-hover)] transition-colors rounded-l-lg"
                           aria-label="Reducir cantidad">
-                    −
+                    <svg lucideMinus [size]="14" class="text-[var(--color-text-secondary)]"></svg>
                   </button>
-                  <span class="w-8 text-center text-sm font-medium">{{ item.quantity }}</span>
+                  <span class="w-8 text-center text-[13px] font-semibold">{{ item.quantity }}</span>
                   <button (click)="onQuantityChange(item.productId, item.quantity + 1)"
-                          class="w-8 h-8 rounded-lg border border-[var(--color-border)] flex items-center justify-center
-                                 hover:bg-[var(--color-surface-hover)] transition-colors text-sm"
+                          class="w-9 h-9 flex items-center justify-center hover:bg-[var(--color-surface-hover)] transition-colors rounded-r-lg"
                           aria-label="Aumentar cantidad">
-                    +
+                    <svg lucidePlus [size]="14" class="text-[var(--color-text-secondary)]"></svg>
                   </button>
                 </div>
-
-                <!-- Remove -->
                 <button (click)="onRemove(item.productId)"
-                        class="p-2 text-[var(--color-error)] hover:bg-red-50 rounded-lg transition-colors shrink-0"
+                        class="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-red-50 transition-colors shrink-0"
                         aria-label="Eliminar producto">
-                  🗑️
+                  <svg lucideTrash2 [size]="16" class="text-[var(--color-error)]"></svg>
                 </button>
               </div>
             }
           </div>
 
-          <!-- Order Summary + Checkout -->
-          <div class="w-full lg:w-96 shrink-0">
-            <div class="bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)] p-6 sticky top-20">
-              <h2 class="font-semibold text-lg mb-4">Resumen del pedido</h2>
+          <!-- Order Summary -->
+          <div class="w-full lg:w-[400px] shrink-0">
+            <div class="bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-6 sticky top-20 flex flex-col gap-5">
+              <h2 class="text-[18px] font-bold">Resumen del pedido</h2>
 
-              <!-- Items summary -->
-              <div class="space-y-2 mb-4 pb-4 border-b border-[var(--color-border)]">
+              <div class="flex flex-col gap-2">
                 @for (item of cart.items(); track item.productId) {
-                  <div class="flex justify-between text-sm">
-                    <span class="text-[var(--color-text-secondary)] truncate mr-2">
-                      {{ item.name }} x{{ item.quantity }}
-                    </span>
-                    <span class="font-medium shrink-0">
-                      {{ prefs.formatPrice()(item.priceUsd * item.quantity) }}
-                    </span>
+                  <div class="flex justify-between text-[13px]">
+                    <span class="text-[var(--color-text-secondary)] truncate mr-2">{{ item.name }} x{{ item.quantity }}</span>
+                    <span class="font-semibold shrink-0">US{{ '$' }} {{ (item.priceUsd * item.quantity).toFixed(2) }}</span>
                   </div>
                 }
               </div>
 
-              <!-- Total -->
-              <div class="flex justify-between items-center mb-6">
-                <span class="font-bold text-lg">Total</span>
-                <span class="font-bold text-xl text-[var(--color-accent)]">
-                  {{ prefs.formatPrice()(cart.totalUsd()) }}
+              <div class="h-px bg-[var(--color-border)]"></div>
+
+              <div class="flex justify-between items-center">
+                <span class="text-[16px] font-bold">Total</span>
+                <span class="text-[18px] font-extrabold text-[var(--color-accent)]">
+                  US{{ '$' }} {{ cart.totalUsd().toFixed(2) }}
                 </span>
               </div>
 
-              <!-- Checkout Form -->
-              <form [formGroup]="checkoutForm" (ngSubmit)="onCheckout()" class="space-y-4">
-                <h3 class="font-semibold text-sm">Datos para el pedido</h3>
+              <div class="h-px bg-[var(--color-border)]"></div>
+
+              <form [formGroup]="checkoutForm" (ngSubmit)="onCheckout()" class="flex flex-col gap-4">
+                <h3 class="text-[14px] font-semibold">Datos para el pedido</h3>
 
                 <div>
-                  <label for="customerName" class="block text-sm font-medium mb-1">Nombre</label>
+                  <label for="customerName" class="block text-[13px] font-medium mb-1">Nombre</label>
                   <input id="customerName" formControlName="customerName" type="text"
                          placeholder="Tu nombre completo"
-                         class="w-full px-4 py-2.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)]
-                                text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
+                         class="w-full px-3.5 py-2.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)]
+                                text-[13px] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
                   @if (checkoutForm.get('customerName')?.invalid && checkoutForm.get('customerName')?.touched) {
-                    <p class="text-xs text-[var(--color-error)] mt-1">El nombre es obligatorio</p>
+                    <p class="text-[11px] text-[var(--color-error)] mt-1">El nombre es obligatorio</p>
                   }
                 </div>
 
                 <div>
-                  <label for="customerPhone" class="block text-sm font-medium mb-1">Teléfono</label>
+                  <label for="customerPhone" class="block text-[13px] font-medium mb-1">Telefono</label>
                   <input id="customerPhone" formControlName="customerPhone" type="tel"
-                         placeholder="+54 388 123-4567"
-                         class="w-full px-4 py-2.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)]
-                                text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
+                         placeholder="+54 388 XXX-XXXX"
+                         class="w-full px-3.5 py-2.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)]
+                                text-[13px] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
                   @if (checkoutForm.get('customerPhone')?.invalid && checkoutForm.get('customerPhone')?.touched) {
-                    <p class="text-xs text-[var(--color-error)] mt-1">Ingresá un teléfono válido</p>
+                    <p class="text-[11px] text-[var(--color-error)] mt-1">Ingresá un teléfono válido</p>
                   }
                 </div>
 
                 <button type="submit"
                         [disabled]="checkoutForm.invalid || submitting()"
-                        class="w-full py-3.5 bg-green-500 text-white rounded-lg font-medium
-                               hover:opacity-90 transition-opacity disabled:opacity-50 text-sm">
-                  {{ submitting() ? 'Enviando...' : '💬 Enviar pedido por WhatsApp' }}
+                        class="w-full py-3 bg-[#25D366] text-white rounded-lg font-semibold
+                               hover:opacity-90 transition-opacity disabled:opacity-50 text-[14px] flex items-center justify-center gap-2">
+                  <svg lucideMessageCircle [size]="18"></svg>
+                  {{ submitting() ? 'Enviando...' : 'Enviar pedido por WhatsApp' }}
                 </button>
               </form>
 
-              <!-- Clear cart -->
               <button (click)="onClearCart()"
-                      class="w-full mt-3 py-2.5 border border-[var(--color-border)] rounded-lg text-sm
+                      class="w-full py-3 border border-[var(--color-border)] rounded-lg text-[13px]
                              hover:bg-[var(--color-surface-hover)] transition-colors text-[var(--color-text-secondary)]">
                 Vaciar carrito
               </button>
