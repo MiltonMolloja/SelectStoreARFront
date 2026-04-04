@@ -107,13 +107,13 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
     <!-- Categorías -->
     @defer (on viewport) {
       @if (data()?.categories?.length) {
-        <section class="py-16 bg-[var(--color-surface)]">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold mb-4" style="font-family: 'Cormorant Garamond', serif">
-            Categorías
+         <section class="bg-[var(--color-surface)]" style="padding: 60px 80px">
+        <div>
+          <h2 class="text-[32px] font-bold mb-2" style="font-family: Inter, sans-serif">
+            Categorias
           </h2>
-          <p class="text-[var(--color-text-secondary)] mb-8">
-            Explorá nuestro catálogo por categoría
+          <p class="text-[16px] text-[var(--color-text-secondary)] mb-8">
+            Explorá nuestras categorías de productos importados
           </p>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             @for (cat of data()!.categories; track cat.id) {
@@ -139,14 +139,14 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
     }
 
     <!-- Productos Destacados -->
-    <section class="py-16">
-      <div class="container mx-auto px-4">
+    <section style="padding: 60px 80px">
+      <div>
         <div class="flex items-center justify-between mb-8">
-          <h2 class="text-3xl font-bold" style="font-family: 'Cormorant Garamond', serif">
+          <h2 class="text-[32px] font-bold" style="font-family: Inter, sans-serif">
             Productos Destacados
           </h2>
           <a routerLink="/catalogo"
-             class="text-sm text-[var(--color-accent)] hover:underline font-medium">
+             class="text-[14px] text-[var(--color-accent)] hover:underline font-semibold">
             Ver todos →
           </a>
         </div>
