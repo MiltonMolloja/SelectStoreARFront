@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, inject, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LucideSearch, LucideMessageCircle, LucideCreditCard, LucideTimer, LucidePackage, LucideShield, LucideCheckCircle, LucideRocket } from '@lucide/angular';
+import { LucideSearch, LucideMessageCircle, LucideCreditCard, LucideTimer, LucidePackage, LucideShield, LucideMapPin } from '@lucide/angular';
 import { ApiService } from '../../core/services/api.service';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { SeoService } from '../../core/services/seo.service';
@@ -12,7 +12,7 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [RouterLink, LucideSearch, LucideMessageCircle, LucideCreditCard, LucideTimer, LucidePackage, LucideShield, LucideCheckCircle, LucideRocket, ProductCardComponent, SkeletonCardComponent],
+  imports: [RouterLink, LucideSearch, LucideMessageCircle, LucideCreditCard, LucideTimer, LucidePackage, LucideShield, LucideMapPin, ProductCardComponent, SkeletonCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <!-- Hero -->
@@ -169,24 +169,42 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
 
     <!-- Por qué elegirnos -->
     @defer (on viewport) {
-      <section class="py-16 bg-[var(--color-surface)]">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12" style="font-family: 'Cormorant Garamond', serif">
-          Por qué elegirnos
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          @for (trust of trustItems; track trust.title) {
-            <div class="text-center">
-              <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[var(--color-accent-light)]
-                          flex items-center justify-center text-3xl">
-                {{ trust.icon }}
+      <section class="bg-[var(--color-surface)]" style="padding: 60px 80px">
+        <div class="flex flex-col items-center gap-10">
+          <h2 class="text-[32px] font-bold" style="font-family: Inter, sans-serif">Por que elegirnos</h2>
+          <div class="flex justify-center gap-8 flex-wrap">
+            <!-- Trust 1: Jujuy -->
+            <div class="flex flex-col items-center gap-3 w-[280px] p-6 rounded-2xl bg-[var(--color-bg)] border border-[var(--color-border)]">
+              <div class="w-12 h-12 rounded-full bg-[var(--color-accent-light)] flex items-center justify-center">
+                <svg lucideMapPin class="text-[var(--color-accent)]" [size]="22"></svg>
               </div>
-              <h3 class="font-semibold mb-2">{{ trust.title }}</h3>
-              <p class="text-sm text-[var(--color-text-secondary)]">{{ trust.description }}</p>
+              <h3 class="text-[16px] font-semibold">Jujuy, Argentina</h3>
+              <p class="text-[13px] text-[var(--color-text-secondary)] leading-[1.5] text-center">
+                Operamos desde San Salvador de Jujuy con envíos a todo el país
+              </p>
             </div>
-          }
+            <!-- Trust 2: WhatsApp -->
+            <div class="flex flex-col items-center gap-3 w-[280px] p-6 rounded-2xl bg-[var(--color-bg)] border border-[var(--color-border)]">
+              <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                <svg lucideMessageCircle class="text-[#25D366]" [size]="22"></svg>
+              </div>
+              <h3 class="text-[16px] font-semibold">WhatsApp directo</h3>
+              <p class="text-[13px] text-[var(--color-text-secondary)] leading-[1.5] text-center">
+                Atención personalizada por WhatsApp. Consultá precios y disponibilidad al instante
+              </p>
+            </div>
+            <!-- Trust 3: Originales -->
+            <div class="flex flex-col items-center gap-3 w-[280px] p-6 rounded-2xl bg-[var(--color-bg)] border border-[var(--color-border)]">
+              <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
+                <svg lucideShield class="text-amber-600" [size]="22"></svg>
+              </div>
+              <h3 class="text-[16px] font-semibold">Productos originales</h3>
+              <p class="text-[13px] text-[var(--color-text-secondary)] leading-[1.5] text-center">
+                Todos nuestros productos son 100% originales con garantía de fábrica
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
       </section>
     } @placeholder {
       <div class="py-16"></div>
@@ -208,12 +226,6 @@ export class LandingComponent implements OnInit {
     { number: 3, lucide: 'credit-card', title: '3. Señá', description: 'Abonás una seña para confirmar tu pedido' },
     { number: 4, lucide: 'timer', title: '4. Esperá', description: 'Tu producto llega en aproximadamente 1 semana' },
     { number: 5, lucide: 'package', title: '5. Recibí', description: 'Retirás tu producto o te lo enviamos' },
-  ];
-
-  protected readonly trustItems = [
-    { icon: '🛡️', title: 'Trato seguro', description: 'Coordinás todo por WhatsApp con atención personalizada' },
-    { icon: '✅', title: 'Productos originales', description: 'Todos los productos son originales, sellados y con garantía' },
-    { icon: '🚀', title: 'Pedido al mejor precio', description: 'Al ser bajo pedido, conseguimos los mejores precios del mercado' },
   ];
 
   ngOnInit(): void {
