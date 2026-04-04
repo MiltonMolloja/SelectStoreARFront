@@ -15,74 +15,77 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
   imports: [RouterLink, FormsModule, ProductCardComponent, SkeletonCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="container mx-auto px-4 py-8">
+    <div style="padding: 24px 80px">
       <!-- Breadcrumb -->
-      <nav class="text-sm text-[var(--color-text-secondary)] mb-6">
+      <nav class="text-[13px] text-[var(--color-text-secondary)] mb-6 flex items-center gap-2">
         <a routerLink="/" class="hover:text-[var(--color-accent)]">Home</a>
-        <span class="mx-2">›</span>
-        <span class="text-[var(--color-text-primary)]">
-          {{ activeCategory() ? activeCategory()!.name : 'Catálogo' }}
+        <span>›</span>
+        <span class="text-[var(--color-text-primary)] font-medium">
+          {{ activeCategory() ? activeCategory()!.name : 'Catalogo' }}
         </span>
       </nav>
 
       <div class="flex flex-col lg:flex-row gap-8">
         <!-- Sidebar Filters -->
-        <aside class="w-full lg:w-64 shrink-0">
-          <h2 class="font-bold text-lg mb-4">Filtros</h2>
+        <aside class="w-full lg:w-[260px] shrink-0">
+          <h2 class="text-[18px] font-bold mb-6">Filtros</h2>
 
           <!-- Categories -->
           <div class="mb-6">
-            <h3 class="font-semibold text-sm mb-2">Categorías</h3>
-            <ul class="space-y-1">
+            <h3 class="text-[14px] font-semibold mb-3">Categorias</h3>
+            <div class="flex flex-col gap-2.5">
               @for (cat of categories(); track cat.id) {
-                <li>
-                  <a [routerLink]="['/categoria', cat.slug]"
-                     [class.text-[var(--color-accent)]]="activeCategorySlug() === cat.slug"
-                     [class.font-medium]="activeCategorySlug() === cat.slug"
-                     class="text-sm hover:text-[var(--color-accent)] transition-colors">
+                <a [routerLink]="['/categoria', cat.slug]"
+                   class="flex items-center gap-2 text-[13px] hover:text-[var(--color-accent)] transition-colors">
+                  <span class="w-[18px] h-[18px] rounded border shrink-0 flex items-center justify-center"
+                        [class.bg-[var(--color-accent)]]="activeCategorySlug() === cat.slug"
+                        [class.border-[var(--color-accent)]]="activeCategorySlug() === cat.slug"
+                        [class.border-[var(--color-border)]]="activeCategorySlug() !== cat.slug"
+                        [class.bg-[var(--color-surface)]]="activeCategorySlug() !== cat.slug">
+                    @if (activeCategorySlug() === cat.slug) {
+                      <span class="text-white text-[10px]">✓</span>
+                    }
+                  </span>
+                  <span [class.font-semibold]="activeCategorySlug() === cat.slug">
                     {{ cat.name }} ({{ cat.productCount }})
-                  </a>
-                </li>
+                  </span>
+                </a>
               }
-            </ul>
+            </div>
           </div>
 
           <!-- Price Range -->
           <div class="mb-6">
-            <h3 class="font-semibold text-sm mb-2">Rango de precio</h3>
+            <h3 class="text-[14px] font-semibold mb-3">Rango de precio</h3>
             <div class="flex gap-2 items-center">
-              <input type="number" placeholder="Min" [ngModel]="minPrice()" (ngModelChange)="minPrice.set($event)"
-                     class="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-sm
+              <input type="number" placeholder="US$ 0" [ngModel]="minPrice()" (ngModelChange)="minPrice.set($event)"
+                     class="w-full px-3 py-2 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[13px]
                             focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
-              <span class="text-[var(--color-text-secondary)]">—</span>
-              <input type="number" placeholder="Max" [ngModel]="maxPrice()" (ngModelChange)="maxPrice.set($event)"
-                     class="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-sm
+              <span class="text-[var(--color-text-secondary)] text-[13px]">—</span>
+              <input type="number" placeholder="US$ 2,000" [ngModel]="maxPrice()" (ngModelChange)="maxPrice.set($event)"
+                     class="w-full px-3 py-2 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] text-[13px]
                             focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
             </div>
-            <button (click)="applyPriceFilter()"
-                    class="mt-2 text-xs text-[var(--color-accent)] hover:underline">
-              Aplicar filtro
-            </button>
           </div>
         </aside>
 
         <!-- Main Content -->
         <div class="flex-1">
           <!-- Search + Sort -->
-          <div class="flex flex-col sm:flex-row gap-4 mb-6">
+          <div class="flex items-center gap-4 mb-5">
             <div class="flex-1 relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-secondary)]">🔍</span>
+              <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--color-text-secondary)] text-[13px]">🔍</span>
               <input type="text" placeholder="Buscar productos..."
                      [ngModel]="searchQuery()" (ngModelChange)="onSearch($event)"
-                     class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]
-                            text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
+                     class="w-full pl-10 pr-4 py-2.5 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]
+                            text-[13px] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-sm text-[var(--color-text-secondary)]">Ordenar:</span>
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="text-[13px] text-[var(--color-text-secondary)] font-medium">Ordenar:</span>
               <select [ngModel]="sortBy()" (ngModelChange)="onSort($event)"
-                      class="px-3 py-2.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]
-                             text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]">
-                <option value="recent">Más recientes</option>
+                      class="px-3 py-2 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]
+                             text-[13px] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]">
+                <option value="recent">Mas recientes</option>
                 <option value="price-asc">Precio: menor a mayor</option>
                 <option value="price-desc">Precio: mayor a menor</option>
                 <option value="name-asc">Nombre A-Z</option>
@@ -92,20 +95,20 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
 
           <!-- Results count -->
           @if (pagination()) {
-            <p class="text-sm text-[var(--color-text-secondary)] mb-4">
-              Mostrando {{ products().length }} de {{ pagination()!.totalItems }} productos
+            <p class="text-[13px] text-[var(--color-text-secondary)] mb-5">
+              Mostrando {{ pagination()!.totalItems }} productos
             </p>
           }
 
           <!-- Product Grid -->
           @if (loading()) {
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
               @for (i of [1,2,3,4,5,6]; track i) {
                 <app-skeleton-card />
               }
             </div>
           } @else if (products().length > 0) {
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
               @for (product of products(); track product.id) {
                 <app-product-card [product]="product" />
               }
@@ -126,21 +129,22 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
 
           <!-- Pagination -->
           @if (pagination() && pagination()!.totalPages > 1) {
-            <div class="flex items-center justify-center gap-2 mt-8">
+            <div class="flex items-center justify-center gap-1 mt-8 pt-4">
               @for (page of getPageNumbers(); track page) {
                 <button
                   (click)="onPageChange(page)"
                   [class.bg-[var(--color-accent)]]="page === currentPage()"
                   [class.text-white]="page === currentPage()"
-                  class="w-10 h-10 rounded-lg border border-[var(--color-border)] text-sm font-medium
+                  class="w-9 h-9 rounded-lg border border-[var(--color-border)] text-[13px] font-medium
                          hover:bg-[var(--color-surface-hover)] transition-colors">
                   {{ page }}
                 </button>
               }
               @if (pagination()!.hasNextPage) {
                 <button (click)="onPageChange(currentPage() + 1)"
-                        class="px-3 h-10 rounded-lg border border-[var(--color-border)] text-sm hover:bg-[var(--color-surface-hover)]">
-                  →
+                        class="w-9 h-9 rounded-lg border border-[var(--color-border)] text-[13px] hover:bg-[var(--color-surface-hover)]
+                               flex items-center justify-center">
+                  ›
                 </button>
               }
             </div>
