@@ -1,6 +1,7 @@
-import { Component, ChangeDetectionStrategy, inject, OnInit, signal, effect } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, OnInit, signal, effect, computed } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { LucideX } from '@lucide/angular';
 import { ApiService } from '../../core/services/api.service';
 import { PreferencesService } from '../../core/services/preferences.service';
 import { SeoService } from '../../core/services/seo.service';
@@ -12,7 +13,7 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [RouterLink, FormsModule, ProductCardComponent, SkeletonCardComponent],
+  imports: [RouterLink, FormsModule, LucideX, ProductCardComponent, SkeletonCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div style="padding: 24px 80px">
@@ -28,7 +29,27 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
       <div class="flex flex-col lg:flex-row gap-8">
         <!-- Sidebar Filters -->
         <aside class="w-full lg:w-[260px] shrink-0">
-          <h2 class="text-[18px] font-bold mb-6">Filtros</h2>
+          <h2 class="text-[18px] font-bold mb-4">Filtros</h2>
+
+          <!-- Active Filter Chips -->
+          @if (activeFilters().length > 0) {
+            <div class="mb-6 flex flex-col gap-2">
+              <div class="flex flex-wrap gap-1.5">
+                @for (filter of activeFilters(); track filter.label) {
+                  <button (click)="removeFilter(filter.type)"
+                          class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--color-border)]
+                                 bg-[var(--color-surface)] text-[13px] font-medium hover:bg-[var(--color-surface-hover)] transition-colors">
+                    {{ filter.label }}
+                    <svg lucideX [size]="14" class="text-[var(--color-text-secondary)]"></svg>
+                  </button>
+                }
+              </div>
+              <button (click)="clearAllFilters()"
+                      class="text-[12px] font-medium text-[var(--color-accent)] hover:underline text-left w-fit">
+                Limpiar filtros
+              </button>
+            </div>
+          }
 
           <!-- Categories -->
           <div class="mb-6">
@@ -200,6 +221,23 @@ export class CatalogComponent implements OnInit {
   protected readonly brands = signal<string[]>([]);
   protected readonly activeBrand = signal<string | null>(null);
 
+  protected readonly activeFilters = computed(() => {
+    const filters: { type: string; label: string }[] = [];
+    const cat = this.activeCategory();
+    if (cat) filters.push({ type: 'category', label: cat.name });
+    const brand = this.activeBrand();
+    if (brand) filters.push({ type: 'brand', label: brand });
+    const min = this.minPrice();
+    const max = this.maxPrice();
+    if (min !== null || max !== null) {
+      const label = `${min ?? 0} — ${max ?? '∞'}`;
+      filters.push({ type: 'price', label });
+    }
+    const q = this.searchQuery();
+    if (q) filters.push({ type: 'search', label: `"${q}"` });
+    return filters;
+  });
+
   private searchTimeout: ReturnType<typeof setTimeout> | null = null;
 
   constructor() {
@@ -234,6 +272,40 @@ export class CatalogComponent implements OnInit {
       'Explorá nuestro catálogo de productos importados. Celulares, consolas, perfumes y tecnología.',
     );
 
+    this.loadProducts();
+  }
+
+  protected removeFilter(type: string): void {
+    switch (type) {
+      case 'category':
+        this.activeCategorySlug.set(null);
+        this.activeCategory.set(null);
+        this.router.navigate(['/catalogo']);
+        break;
+      case 'brand':
+        this.activeBrand.set(null);
+        break;
+      case 'price':
+        this.minPrice.set(null);
+        this.maxPrice.set(null);
+        break;
+      case 'search':
+        this.searchQuery.set('');
+        break;
+    }
+    this.currentPage.set(1);
+    this.loadProducts();
+  }
+
+  protected clearAllFilters(): void {
+    this.activeCategorySlug.set(null);
+    this.activeCategory.set(null);
+    this.activeBrand.set(null);
+    this.minPrice.set(null);
+    this.maxPrice.set(null);
+    this.searchQuery.set('');
+    this.currentPage.set(1);
+    this.router.navigate(['/catalogo']);
     this.loadProducts();
   }
 
