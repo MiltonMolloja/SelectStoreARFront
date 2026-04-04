@@ -55,7 +55,7 @@ import { AuthService } from '../../core/services/auth.service';
                     {{ item.name }}
                   </a>
                   <p class="text-[var(--color-accent)] text-[14px] font-bold mt-1">
-                    US{{ '$' }} {{ item.priceUsd.toFixed(2) }}
+                    {{ prefs.formatPrice()(item.priceUsd) }}
                   </p>
                 </div>
                 <div class="flex items-center shrink-0 border border-[var(--color-border)] rounded-lg">
@@ -89,7 +89,7 @@ import { AuthService } from '../../core/services/auth.service';
                 @for (item of cart.items(); track item.productId) {
                   <div class="flex justify-between text-[13px]">
                     <span class="text-[var(--color-text-secondary)] truncate mr-2">{{ item.name }} x{{ item.quantity }}</span>
-                    <span class="font-semibold shrink-0">US{{ '$' }} {{ (item.priceUsd * item.quantity).toFixed(2) }}</span>
+                    <span class="font-semibold shrink-0">{{ prefs.formatPrice()(item.priceUsd * item.quantity) }}</span>
                   </div>
                 }
               </div>
@@ -99,7 +99,7 @@ import { AuthService } from '../../core/services/auth.service';
               <div class="flex justify-between items-center">
                 <span class="text-[16px] font-bold">Total</span>
                 <span class="text-[18px] font-extrabold text-[var(--color-accent)]">
-                  US{{ '$' }} {{ cart.totalUsd().toFixed(2) }}
+                  {{ prefs.formatPrice()(cart.totalUsd()) }}
                 </span>
               </div>
 
