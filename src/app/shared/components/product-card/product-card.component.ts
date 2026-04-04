@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LucidePackage } from '@lucide/angular';
 import { ProductListItem } from '../../../core/models';
 import { PreferencesService } from '../../../core/services/preferences.service';
 import { CartService } from '../../../core/services/cart.service';
@@ -9,13 +10,13 @@ import { ToastService } from '../../../core/services/toast.service';
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, LucidePackage],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <article class="group bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)]
-                    overflow-hidden hover:shadow-[var(--shadow-lg)] transition-shadow">
+                    overflow-hidden hover:shadow-[var(--shadow-lg)] transition-shadow w-full">
       <a [routerLink]="['/producto', product().slug]" class="block">
-        <div class="aspect-[4/3] overflow-hidden bg-[var(--color-divider)]">
+        <div class="h-[210px] overflow-hidden bg-[var(--color-divider)]">
           @if (product().imageUrl) {
             <img [src]="product().imageUrl"
                  [alt]="product().name"
@@ -27,22 +28,26 @@ import { ToastService } from '../../../core/services/toast.service';
         </div>
       </a>
 
-      <div class="p-4">
-        <p class="text-xs text-[var(--color-text-secondary)] mb-1">
-          {{ product().category.name }}
+      <div class="p-4 flex flex-col gap-2">
+        <p class="text-[12px] font-medium text-[var(--color-text-secondary)]">
+          {{ product().category?.name ?? '' }}
         </p>
+        <span class="inline-flex items-center gap-1 w-fit px-2 py-0.5 rounded-full bg-blue-50 text-[var(--color-accent)]">
+          <svg lucidePackage [size]="12"></svg>
+          <span class="text-[11px] font-medium">Bajo pedido · ~1 sem</span>
+        </span>
         <a [routerLink]="['/producto', product().slug]" class="block">
-          <h3 class="font-semibold text-sm line-clamp-2 mb-2 hover:text-[var(--color-accent)] transition-colors">
+          <h3 class="text-[15px] font-semibold line-clamp-2 hover:text-[var(--color-accent)] transition-colors">
             {{ product().name }}
           </h3>
         </a>
-        <p class="text-lg font-bold text-[var(--color-accent)] mb-3">
+        <p class="text-[18px] font-bold text-[var(--color-accent)]">
           {{ prefs.formatPrice()(product().finalPriceUsd) }}
         </p>
         <button
           (click)="onAddToCart()"
           class="w-full py-2.5 bg-[var(--color-accent)] text-white rounded-lg
-                 hover:opacity-90 transition-opacity text-sm font-medium">
+                 hover:opacity-90 transition-opacity text-[13px] font-semibold">
           Agregar al carrito
         </button>
       </div>
