@@ -16,14 +16,14 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <!-- Hero -->
-    <section style="background: linear-gradient(135deg, #eff6ff 0%, #fafafa 100%)">
+    <section style="background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%)">
       <div class="mx-auto flex flex-col md:flex-row items-center justify-between h-[560px]"
            style="padding: 0 80px; max-width: 1440px">
         <div class="max-w-[560px] flex flex-col gap-6">
           <span class="inline-block w-fit px-3.5 py-1.5 rounded-full bg-[var(--color-accent-light)] text-[var(--color-accent)] text-[13px] font-semibold">
             Productos importados bajo pedido
           </span>
-          <h1 class="text-[44px] font-extrabold leading-[1.1]" style="font-family: Inter, sans-serif">
+          <h1 class="text-[44px] font-extrabold leading-[1.1] text-[var(--color-text-primary)]" style="font-family: Inter, sans-serif">
             Tu tienda de productos importados premium
           </h1>
           <p class="text-[17px] text-[var(--color-text-secondary)] leading-[1.6]">
