@@ -54,6 +54,30 @@ import { SkeletonCardComponent } from '../../shared/components/skeleton-card/ske
             </div>
           </div>
 
+          <!-- Brands -->
+          @if (brands().length > 0) {
+            <div class="mb-6">
+              <h3 class="text-[14px] font-semibold mb-3">Marca</h3>
+              <div class="flex flex-col gap-2.5 max-h-[200px] overflow-y-auto">
+                @for (brand of brands(); track brand) {
+                  <button (click)="onBrandFilter(brand)"
+                     class="flex items-center gap-2 text-[13px] hover:text-[var(--color-accent)] transition-colors text-left">
+                    <span class="w-[18px] h-[18px] rounded border shrink-0 flex items-center justify-center"
+                          [class.bg-[var(--color-accent)]]="activeBrand() === brand"
+                          [class.border-[var(--color-accent)]]="activeBrand() === brand"
+                          [class.border-[var(--color-border)]]="activeBrand() !== brand"
+                          [class.bg-[var(--color-surface)]]="activeBrand() !== brand">
+                      @if (activeBrand() === brand) {
+                        <span class="text-white text-[10px]">✓</span>
+                      }
+                    </span>
+                    <span [class.font-semibold]="activeBrand() === brand">{{ brand }}</span>
+                  </button>
+                }
+              </div>
+            </div>
+          }
+
           <!-- Price Range -->
           <div class="mb-6">
             <h3 class="text-[14px] font-semibold mb-3">Rango de precio</h3>
@@ -173,6 +197,8 @@ export class CatalogComponent implements OnInit {
   protected readonly maxPrice = signal<number | null>(null);
   protected readonly activeCategorySlug = signal<string | null>(null);
   protected readonly activeCategory = signal<Category | null>(null);
+  protected readonly brands = signal<string[]>([]);
+  protected readonly activeBrand = signal<string | null>(null);
 
   private searchTimeout: ReturnType<typeof setTimeout> | null = null;
 
@@ -216,6 +242,12 @@ export class CatalogComponent implements OnInit {
     }, 300);
   }
 
+  protected onBrandFilter(brand: string): void {
+    this.activeBrand.update(current => current === brand ? null : brand);
+    this.currentPage.set(1);
+    this.loadProducts();
+  }
+
   protected onSort(sort: string): void {
     this.sortBy.set(sort);
     this.currentPage.set(1);
@@ -256,6 +288,7 @@ export class CatalogComponent implements OnInit {
       this.api.getProducts({
         page: this.currentPage(),
         category: this.activeCategorySlug() ?? undefined,
+        brand: this.activeBrand() ?? undefined,
         sort: this.sortBy(),
         minPrice: this.minPrice() ?? undefined,
         maxPrice: this.maxPrice() ?? undefined,
@@ -276,6 +309,14 @@ export class CatalogComponent implements OnInit {
     this.products.set(res.items);
     this.pagination.set(res.pagination);
     this.loading.set(false);
+
+    // Extract unique brands from results (only if no brand filter active)
+    if (!this.activeBrand()) {
+      const uniqueBrands = [...new Set(res.items.map(p => p.brand).filter(Boolean))].sort();
+      if (uniqueBrands.length > 0) {
+        this.brands.set(uniqueBrands);
+      }
+    }
   }
 
   private loadCategories(): void {

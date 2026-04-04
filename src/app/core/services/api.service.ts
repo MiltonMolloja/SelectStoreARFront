@@ -27,6 +27,7 @@ export class ApiService {
     page?: number;
     pageSize?: number;
     category?: string;
+    brand?: string;
     sort?: string;
     minPrice?: number;
     maxPrice?: number;
@@ -36,6 +37,7 @@ export class ApiService {
     if (params.page) httpParams = httpParams.set('page', params.page);
     if (params.pageSize) httpParams = httpParams.set('pageSize', params.pageSize);
     if (params.category) httpParams = httpParams.set('category', params.category);
+    if (params.brand) httpParams = httpParams.set('brand', params.brand);
     if (params.sort) httpParams = httpParams.set('sort', params.sort);
     if (params.minPrice) httpParams = httpParams.set('minPrice', params.minPrice);
     if (params.maxPrice) httpParams = httpParams.set('maxPrice', params.maxPrice);
