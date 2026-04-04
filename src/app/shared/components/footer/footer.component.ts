@@ -12,29 +12,28 @@ import { RouterLink } from '@angular/router';
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Brand -->
           <div>
-            <h3 class="text-lg font-bold text-[var(--color-accent)] mb-3"
-                style="font-family: 'Cormorant Garamond', serif">
+            <h3 class="text-[18px] font-extrabold text-[var(--color-accent)] mb-2">
               SelectStoreAR
             </h3>
-            <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
-              Productos importados bajo pedido.
-              Celulares, consolas, perfumes y más.
+            <p class="text-[13px] text-[var(--color-text-secondary)] leading-relaxed">
+              Productos importados premium bajo pedido.
+              Celulares, consolas, perfumes y mas.
             </p>
           </div>
 
           <!-- Links -->
           <div>
-            <h4 class="font-semibold mb-3 text-sm">Links</h4>
-            <ul class="space-y-2 text-sm text-[var(--color-text-secondary)]">
-              <li><a routerLink="/catalogo" class="hover:text-[var(--color-accent)] transition-colors">Catálogo</a></li>
-              <li><a routerLink="/carrito" class="hover:text-[var(--color-accent)] transition-colors">Carrito</a></li>
+            <h4 class="text-[14px] font-semibold mb-2">Links</h4>
+            <ul class="space-y-2 text-[13px] text-[var(--color-text-secondary)]">
+              <li><a routerLink="/catalogo" class="hover:text-[var(--color-accent)] transition-colors">Catalogo</a></li>
+              <li><a routerLink="/carrito" class="hover:text-[var(--color-accent)] transition-colors">Contacto</a></li>
             </ul>
           </div>
 
           <!-- Contact -->
           <div>
-            <h4 class="font-semibold mb-3 text-sm">Contacto</h4>
-            <ul class="space-y-2 text-sm text-[var(--color-text-secondary)]">
+            <h4 class="text-[14px] font-semibold mb-2">Contacto</h4>
+            <ul class="space-y-2 text-[13px] text-[var(--color-text-secondary)]">
               <li>
                 <a href="https://wa.me/5493881234567" target="_blank" rel="noopener"
                    class="hover:text-[var(--color-accent)] transition-colors">
